@@ -1,0 +1,64 @@
+{
+  "name": "devfest-2015-ng2-codelab",
+  "version": "1.0.0",
+  "description": "Angular 2 Codelab: develop an Angular 2 application for The DevFest 2015 Conference.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:manekinekko/devfest-2015-ng2-codelab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manekinekko/devfest-2015-ng2-codelab/issues"
+  },
+  "homepage": "https://github.com/manekinekko/devfest-2015-ng2-codelab",
+  "scripts": {
+    "test": "gulp test",
+    "karma": "node_modules/.bin/karma start",
+    "postinstall": "gulp postinstall && gulp build"
+  },
+  "author": "Wassim Chegham <maneki.nekko@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "browser-sync": "^2.9.3",
+    "connect-livereload": "^0.5.3",
+    "del": "^1.1.1",
+    "express": "~4.13.1",
+    "gulp": "^3.8.11",
+    "gulp-bump": "^0.3.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-filter": "^2.0.2",
+    "gulp-inject": "^1.3.1",
+    "gulp-inline-ng2-template": "0.0.5",
+    "gulp-jasmine": "^2.0.1",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-minify-css": "^1.1.6",
+    "gulp-minify-html": "^1.0.3",
+    "gulp-plumber": "~1.0.1",
+    "gulp-shell": "~0.4.3",
+    "gulp-sourcemaps": "~1.5.2",
+    "gulp-template": "^3.0.0",
+    "gulp-typescript": "~2.7.5",
+    "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.2.4",
+    "jasmine-core": "~2.3.4",
+    "jasmine-spec-reporter": "^2.4.0",
+    "karma": "~0.12.37",
+    "karma-chrome-launcher": "~0.2.0",
+    "karma-jasmine": "~0.3.6",
+    "open": "0.0.5",
+    "run-sequence": "^1.1.0",
+    "semver": "^4.3.6",
+    "serve-static": "^1.9.2",
+    "stream-series": "^0.1.1",
+    "superstatic": "^1.2.3",
+    "systemjs-builder": "^0.13.3",
+    "tiny-lr": "^0.1.6",
+    "typescript": "~1.5.3"
+  },
+  "dependencies": {
+    "angular2": "2.0.0-alpha.36",
+    "es6-module-loader": "^0.15.0",
+    "reflect-metadata": "0.1.0",
+    "systemjs": "^0.18.11",
+    "zone.js": "^0.4.1"
+  }
+}
