@@ -31,6 +31,7 @@ test/coverage
 .lock-wscript
 
 # Server
+/__build__/
 /dist/
 /modules/server/dist/
 # /modules/server/typings/
@@ -41,14 +42,6 @@ test/coverage
 
 /bower_components/
 /web_modules/
-
-# Preboot
-/modules/preboot/node_modules
-/modules/preboot/dist
-# /modules/preboot/typings/
-!/modules/preboot/typings/_custom
-!/modules/preboot/typings/tsd.d.ts
-
 
 # Typings
 /typings
