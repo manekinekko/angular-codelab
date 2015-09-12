@@ -240,7 +240,7 @@ gulp.task('serve', ['build:dev'], function () {
   process.stdout.write('Starting browserSync and superstatic...\n');
   browserSync({
     port: serverport,
-    files: paths.src.everything,
+    files: paths.dest.folder,
     injectChanges: true,
     logFileChanges: false,
     logLevel: 'info',
@@ -253,7 +253,8 @@ gulp.task('serve', ['build:dev'], function () {
     }
   });
   
-  $.watch(paths.src.assets)
-    .pipe(browserSync.reload({stream: true}));
-  
+  $.watch(paths.src.everything, function() {
+    gulp.start('build:dev');
+  });
+    
 });
