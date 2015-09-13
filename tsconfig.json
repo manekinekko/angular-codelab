@@ -19,7 +19,6 @@
         "./app/components/home/home.ts",
         "./app/components/home/home_spec.ts",
         "./app/components/toolbar/toolbar.ts",
-        "./app/init.ts",
         "./app/services/NameList.ts",
         "./app/services/NameList_spec.ts",
         "./app/typings/_custom.d.ts",
