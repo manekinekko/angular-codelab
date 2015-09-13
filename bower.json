@@ -1,0 +1,19 @@
+{
+  "name": "devfest-2015-ng2-codelab",
+  "version": "1.0.0",
+  "homepage": "https://github.com/manekinekko/devfest-2015-ng2-codelab",
+  "authors": [
+    "Wassim Chegham <maneki.nekko@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.0.4"
+  }
+}
