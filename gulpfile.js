@@ -46,6 +46,7 @@ var paths = {
   dest: {
     folder: root(DEST_FOLDER),
     vendor: root(DEST_FOLDER + '/vendor'),
+    fonts: root(DEST_FOLDER + '/fonts'),
     test: root('test')
   },
   
@@ -61,6 +62,9 @@ var paths = {
       'app/**/*.html',
       'app/**/*.css'
     ]),
+    fonts: rootDir([
+      'fonts/**/*'
+    ]),
     vendor: [
       'node_modules/angular2/node_modules/traceur/bin/traceur-runtime.js',
       'node_modules/es6-module-loader/dist/es6-module-loader-sans-promises.js',
@@ -73,6 +77,8 @@ var paths = {
       'node_modules/angular2/bundles/router.dev.js',
       'node_modules/angular2/bundles/http.dev.js',
       
+      'bower_components/material-design-lite/material.js',
+      'bower_components/material-design-lite/material.css',
       'app/app.css'
     ]
   },
@@ -134,6 +140,11 @@ gulp.task('build:vendor:dev', function () {
     .pipe(gulp.dest(paths.dest.vendor));
 });
 
+gulp.task('build:fonts:dev', function () {
+  return gulp.src(paths.src.fonts)
+    .pipe(gulp.dest(paths.dest.fonts));
+});
+
 gulp.task('build:typescript:dev', function () {
   var result = gulp.src(paths.src.ts)
     .pipe($.plumber())
@@ -158,7 +169,7 @@ gulp.task('build:index:dev', function () {
 });
 
 gulp.task('build:app:dev', function (done) {
-  runSequence('clean:app:dev', 'build:assets:dev', 'build:index:dev', done);
+  runSequence('clean:app:dev', 'build:fonts:dev', 'build:assets:dev', 'build:index:dev', done);
 });
 
 gulp.task('build:dev', function (done) {
