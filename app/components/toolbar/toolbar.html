@@ -1,19 +1,31 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout">
   <header class="mdl-layout__header">
+    <!-- Top row, always visible -->
     <div class="mdl-layout__header-row">
       <!-- Title -->
       <span class="mdl-layout-title">{{ title }}</span>
-      <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        
+    </div>
+    <!-- Bottom row, not visible on scroll -->
+    <div class="mdl-layout__header-row">
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
       </nav>
     </div>
   </header>
-  <main class="mdl-layout__content">
-    <div class="page-content">
-    	<home></home>
-    </div>
-  </main>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">{{ title }}</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  <home class="mdl-layout__content"></home>
 </div>

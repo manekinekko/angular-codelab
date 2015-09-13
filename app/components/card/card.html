@@ -1,0 +1,21 @@
+<div class="mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">{{ content.title }}</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+        for="demo-menu-lower-left">
+    <li class="mdl-menu__item" *ng-for="#choice of content.choices" >
+      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+        <input type="checkbox" id="switch-1" class="mdl-switch__input" checked />
+        <span class="mdl-switch__label">{{ choice.label }}</span>
+      </label>
+    </li>
+  </ul>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a href="#/test/{{ content.url }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Start test
+    </a>
+  </div>
+</div>

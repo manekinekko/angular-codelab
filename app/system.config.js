@@ -1,3 +1,6 @@
 System.config({
-  defaultJSExtensions: true
+  defaultJSExtensions: true,
+  map: {
+    'chance/chance': 'vendor/chance.min'
+  }
 });

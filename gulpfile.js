@@ -73,6 +73,7 @@ var paths = {
       'node_modules/reflect-metadata/Reflect.js.map',
       'node_modules/systemjs/dist/system.src.js',
       'app/system.config.js',
+      'node_modules/chance/dist/chance.min.js',
       'node_modules/angular2/bundles/angular2.dev.js',
       'node_modules/angular2/bundles/router.dev.js',
       'node_modules/angular2/bundles/http.dev.js',
@@ -113,7 +114,7 @@ var tsProject = $.typescript.createProject(paths.config.tsconfig, {
 
 // Default task
 
-gulp.task('default', ['build:dev']);
+gulp.task('default', ['build']);
 
 // Clean
 
@@ -125,27 +126,27 @@ gulp.task('clean:typings', function(done) {
   del(paths.clean.typings, done);
 });
 
-gulp.task('clean:dev', function(done) {
+gulp.task('clean:app', function(done) {
   del(paths.clean.app, done);
 });
 
-gulp.task('clean:app:dev', function(done) {
+gulp.task('clean:dev', function(done) {
   del(paths.clean.dev, done);
 });
 
 // Build dev
 
-gulp.task('build:vendor:dev', function () {
+gulp.task('build:vendor', function () {
   return gulp.src(paths.src.vendor)
     .pipe(gulp.dest(paths.dest.vendor));
 });
 
-gulp.task('build:fonts:dev', function () {
+gulp.task('build:fonts', function () {
   return gulp.src(paths.src.fonts)
     .pipe(gulp.dest(paths.dest.fonts));
 });
 
-gulp.task('build:typescript:dev', function () {
+gulp.task('build:typescript', function () {
   var result = gulp.src(paths.src.ts)
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
@@ -156,28 +157,25 @@ gulp.task('build:typescript:dev', function () {
     .pipe(gulp.dest(paths.dest.folder));
 });
 
-gulp.task('build:assets:dev', ['build:typescript:dev'], function () {
+gulp.task('build:assets', function () {
   return gulp.src(paths.src.assets)
-    .pipe(gulp.dest(paths.dest.folder));
+    .pipe(gulp.dest(paths.dest.folder))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('build:index:dev', function () {
+gulp.task('build:index', function () {
   var target = gulp.src(paths.src.index);
   var sources = gulp.src(paths.src.vendor, { read: false, relative: true});
   return target.pipe($.inject(sources, {transform: transformPath()}))
     .pipe(gulp.dest(paths.dest.folder));
 });
 
-gulp.task('build:app:dev', function (done) {
-  runSequence('clean:app:dev', 'build:fonts:dev', 'build:assets:dev', 'build:index:dev', done);
+gulp.task('build:app', function (done) {
+  runSequence('clean:dev', 'build:fonts', 'build:assets', 'build:typescript', 'build:index', done);
 });
 
-gulp.task('build:dev', function (done) {
-  runSequence('clean:dev', 'build:app:dev', 'build:vendor:dev', done);
-});
-
-gulp.task('build', function(done) {
-  runSequence('build:dev', done);
+gulp.task('build', function (done) {
+  runSequence('clean:app', 'build:app', 'build:vendor', done);
 });
 
 // Post install (NPM lifecycle)
@@ -224,7 +222,7 @@ gulp.task('test', ['karma:start'], function() {
   });
 });
 
-gulp.task('jasmine', ['build:app:dev'], function() {
+gulp.task('jasmine', ['build:app'], function() {
 
   var terminalReporter = new $.jasmineReporters.TerminalReporter({
     verbose: 3,
@@ -247,13 +245,12 @@ gulp.task('jasmine', ['build:app:dev'], function() {
 
 // Serve dev.
 
-gulp.task('serve', ['build:dev'], function () {
-  process.stdout.write('Starting browserSync and superstatic...\n');
+gulp.task('serve', ['build'], function () {
   browserSync({
     port: serverport,
     files: paths.dest.folder,
     injectChanges: true,
-    logFileChanges: false,
+    logFileChanges: true,
     logLevel: 'info',
     logPrefix: 'DevFest-2015',
     notify: true,
@@ -264,8 +261,8 @@ gulp.task('serve', ['build:dev'], function () {
     }
   });
   
-  $.watch(paths.src.everything, function() {
-    gulp.start('build:dev');
+  $.watch([].concat(paths.src.ts).concat(paths.src.assets), function() {
+    gulp.start('build');
   });
     
 });

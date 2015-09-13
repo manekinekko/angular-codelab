@@ -56,23 +56,27 @@ a {
 .text-warning { color: #8a6d3b; }
 .text-danger { color: #a94442; }
 
-ng-md-icon.yellow-star {
+ng-mdl-icon.yellow-star {
   fill: orange;
 }
 
-md-card .md-caption {
+.mdl-card {
+  width: 100%;
+}
+
+.mdl-card .mdl-caption {
   margin-top: -20px;
 }
 
-md-card > i {
+.mdl-card > i {
  line-height: 54px;
 }
 
-md-list-item p {
+.mdl-list-item p {
   padding-right: 60px
 }
 
-md-progress-linear {
+.mdl-progress-linear {
   position: absolute;
   top: -5px;
   left: 0;
@@ -81,12 +85,8 @@ md-progress-linear {
   z-index: 2;
 }
 
-.md-button.md-fab.md-fab-bottom-right {
+.mdl-button.mdl-fab.mdl-fab-bottom-right {
   position: fixed;
-}
-
-ng-md-icon > svg {
-  margin-top: 16px;
 }
 
 pre {

@@ -1,4 +1,6 @@
-import {Component, View, bootstrap} from 'angular2/angular2';
+/// <reference path="../../typings/_custom.d.ts" />
+
+import {Component, View, bootstrap, ViewEncapsulation} from 'angular2/angular2';
 
 import {Home} from 'components/home/home';
 
@@ -7,7 +9,8 @@ import {Home} from 'components/home/home';
 })
 @View({
   templateUrl: 'components/toolbar/toolbar.html',
-  directives: [ Home ]
+  directives: [ Home ],
+  encapsulation: ViewEncapsulation.NONE
 })
 export class Toolbar {
   title: string = 'Toolbar';
