@@ -12,7 +12,7 @@ import {QuestionDataService} from 'services/QuestionDataService';
 @View({
   templateUrl: './components/home/home.html',
   directives: [NgFor, Card],
-  encapsulation: ViewEncapsulation.NONE
+  encapsulation: ViewEncapsulation.None
 })
 export class Home {
   cards: any[];

@@ -10,7 +10,7 @@ import {Component, View, NgFor, ViewEncapsulation} from 'angular2/angular2';
 	templateUrl: './components/card/card.html',
 	directives: [NgFor],
 	styleUrls: ['./components/card/card.css'],
-	encapsulation: ViewEncapsulation.NONE
+	encapsulation: ViewEncapsulation.None
 })
 export class Card {
 	content: any;

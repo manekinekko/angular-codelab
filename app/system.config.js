@@ -1,6 +1,7 @@
 System.config({
   defaultJSExtensions: true,
   map: {
-    'chance/chance': 'vendor/chance.min'
+    'angular2/angular2':'vendor/angular2.dev',
+    'angular2/router':'vendor/router.dev'
   }
 });

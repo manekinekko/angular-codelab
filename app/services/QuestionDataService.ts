@@ -1,4 +1,4 @@
-import { chance } from 'chance/chance';
+import { Chance } from 'chance';
 
 interface IQuestionModel {
 	description: string;

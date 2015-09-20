@@ -60,7 +60,9 @@ var paths = {
     ]),
     assets: rootDir([
       'app/**/*.html',
-      'app/**/*.css'
+      'app/**/*.css',
+      'app/system.js',
+      'app/system.config.js'
     ]),
     fonts: rootDir([
       'fonts/**/*'
@@ -68,12 +70,9 @@ var paths = {
     vendor: [
       'node_modules/angular2/node_modules/traceur/bin/traceur-runtime.js',
       'node_modules/es6-module-loader/dist/es6-module-loader-sans-promises.js',
-      'node_modules/es6-module-loader/dist/es6-module-loader-sans-promises.js.map',
       'node_modules/reflect-metadata/Reflect.js',
-      'node_modules/reflect-metadata/Reflect.js.map',
       'node_modules/systemjs/dist/system.src.js',
-      'app/system.config.js',
-      'node_modules/chance/dist/chance.min.js',
+      'node_modules/chance/dist/chance.js',
       'node_modules/angular2/bundles/angular2.dev.js',
       'node_modules/angular2/bundles/router.dev.js',
       'node_modules/angular2/bundles/http.dev.js',
@@ -254,7 +253,7 @@ gulp.task('serve', ['build'], function () {
     logLevel: 'info',
     logPrefix: 'DevFest-2015',
     notify: true,
-    reloadDelay: 0,
+    reloadDelay: 100,
     server: {
       baseDir: DEST_FOLDER,
       middleware: superstatic({ debug: false})

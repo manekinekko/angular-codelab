@@ -13,9 +13,8 @@
         "resolve": true
     },
     "files": [
-        "./app/system.ts",
+        "./app/bootstrap.ts",
         "./app/app.ts",
-        "./app/components/about/about.ts",
         "./app/components/home/home.ts",
         "./app/components/toolbar/toolbar.ts",
         "./app/services/QuestionService.ts",

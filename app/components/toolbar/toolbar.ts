@@ -10,7 +10,8 @@ import {Home} from 'components/home/home';
 @View({
   templateUrl: 'components/toolbar/toolbar.html',
   directives: [ Home ],
-  encapsulation: ViewEncapsulation.NONE
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['vendor/material.css']
 })
 export class Toolbar {
   title: string = 'Toolbar';

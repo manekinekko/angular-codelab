@@ -38,12 +38,14 @@
     "gulp-template": "^3.0.0",
     "gulp-typescript": "~2.7.5",
     "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
     "gulp-watch": "^4.2.4",
     "jasmine-core": "~2.3.4",
     "jasmine-spec-reporter": "^2.4.0",
     "karma": "~0.12.37",
     "karma-chrome-launcher": "~0.2.0",
     "karma-jasmine": "~0.3.6",
+    "object-assign": "^4.0.1",
     "open": "0.0.5",
     "run-sequence": "^1.1.0",
     "semver": "^4.3.6",
@@ -52,14 +54,16 @@
     "superstatic": "^1.2.3",
     "systemjs-builder": "^0.13.3",
     "tiny-lr": "^0.1.6",
-    "typescript": "~1.5.3"
+    "typescript": "~1.5.3",
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.36",
+    "angular2": "2.0.0-alpha.37",
     "chance": "^0.7.7",
     "es6-module-loader": "^0.15.0",
     "reflect-metadata": "0.1.0",
+    "rx": "^3.1.2",
     "systemjs": "^0.18.11",
+    "typescript-simple": "^2.0.0",
     "zone.js": "^0.4.1"
   }
 }

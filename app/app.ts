@@ -12,6 +12,4 @@ import {Toolbar} from './components/toolbar/toolbar';
   ` ,
   directives: [ Toolbar ]
 })
-class Devfest {}
-
-bootstrap(Devfest, []);
+export class Devfest {}
