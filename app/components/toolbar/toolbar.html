@@ -1,13 +1,9 @@
-<div class="mdl-layout">
-  <header class="mdl-layout__header">
-    <!-- Top row, always visible -->
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--scroll">
     <div class="mdl-layout__header-row">
       <!-- Title -->
       <span class="mdl-layout-title">{{ title }}</span>
-      <div class="mdl-layout-spacer"></div>
-    </div>
-    <!-- Bottom row, not visible on scroll -->
-    <div class="mdl-layout__header-row">
+      <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation -->
       <nav class="mdl-navigation">
@@ -19,7 +15,7 @@
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">{{ title }}</span>
+    <span class="mdl-layout-title">Title</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="">Link</a>
       <a class="mdl-navigation__link" href="">Link</a>
@@ -27,5 +23,9 @@
       <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div>
-  <home class="mdl-layout__content"></home>
+ 
+  <main class="mdl-layout__content" fix-scrolling>
+    <home></home>
+  </main>
+ 
 </div>
