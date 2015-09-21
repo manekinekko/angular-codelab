@@ -13,7 +13,7 @@ export class QuestionDataService {
 	private range: IQuestionModel[];
 	list(){
 		
-		return Array.apply(null, {length: 100}).map((item, index) => {
+		return Array.apply(null, {length: 5}).map((item, index) => {
 			return {
 				title: `Question #${index+1} : `,
 				choices: [{
