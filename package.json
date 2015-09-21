@@ -54,7 +54,7 @@
     "superstatic": "^1.2.3",
     "systemjs-builder": "^0.13.3",
     "tiny-lr": "^0.1.6",
-    "typescript": "~1.5.3",
+    "typescript": "~1.5.3"
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.37",
@@ -62,7 +62,7 @@
     "es6-module-loader": "^0.15.0",
     "reflect-metadata": "0.1.0",
     "rx": "^3.1.2",
-    "systemjs": "^0.18.11",
+    "systemjs": "^0.19.0",
     "typescript-simple": "^2.0.0",
     "zone.js": "^0.4.1"
   }

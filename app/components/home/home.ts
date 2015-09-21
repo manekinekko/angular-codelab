@@ -2,8 +2,8 @@
 
 import {Component, View, NgFor, ViewEncapsulation} from 'angular2/angular2';
 
-import {Card} from 'components/card/card';
-import {QuestionDataService} from 'services/QuestionDataService';
+import {Card} from '../card/card';
+import {QuestionDataService} from '../../services/QuestionDataService';
 
 @Component({
   selector: 'home',

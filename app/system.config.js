@@ -1,7 +1,14 @@
 System.config({
-  defaultJSExtensions: true,
   map: {
-    'angular2/angular2':'vendor/angular2.dev',
-    'angular2/router':'vendor/router.dev'
+    bootstrap: './'
+  },
+  packages: {
+    bootstrap: {
+      main: './bootstrap.js',
+      defaultExtension: 'js'
+    }
   }
 });
+
+
+System.import('bootstrap').catch(console.error);

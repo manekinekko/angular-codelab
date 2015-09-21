@@ -60,9 +60,7 @@ var paths = {
     ]),
     assets: rootDir([
       'app/**/*.html',
-      'app/**/*.css',
-      'app/system.js',
-      'app/system.config.js'
+      'app/**/*.css'
     ]),
     fonts: rootDir([
       'fonts/**/*'
@@ -70,16 +68,22 @@ var paths = {
     vendor: [
       'node_modules/angular2/node_modules/traceur/bin/traceur-runtime.js',
       'node_modules/es6-module-loader/dist/es6-module-loader-sans-promises.js',
+      'node_modules/es6-module-loader/dist/es6-module-loader-sans-promises.js.map',
       'node_modules/reflect-metadata/Reflect.js',
+      'node_modules/reflect-metadata/Reflect.js.map',
       'node_modules/systemjs/dist/system.src.js',
-      'node_modules/chance/dist/chance.js',
+      
       'node_modules/angular2/bundles/angular2.dev.js',
       'node_modules/angular2/bundles/router.dev.js',
       'node_modules/angular2/bundles/http.dev.js',
       
       'bower_components/material-design-lite/material.js',
       'bower_components/material-design-lite/material.css',
-      'app/app.css'
+      
+      'node_modules/chance/dist/chance.js',
+      
+      'app/app.css',
+      'app/system.config.js'
     ]
   },
   

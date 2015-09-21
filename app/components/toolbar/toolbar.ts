@@ -2,7 +2,7 @@
 
 import {Component, View, bootstrap, ViewEncapsulation} from 'angular2/angular2';
 
-import {Home} from 'components/home/home';
+import {Home} from '../home/home';
 
 @Component({
   selector: 'toolbar'
