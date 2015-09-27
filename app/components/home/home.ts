@@ -2,22 +2,21 @@
 
 import {Component, View, NgFor, ViewEncapsulation} from 'angular2/angular2';
 
-import {Card} from '../card/card';
-import {QuestionDataService} from '../../services/QuestionDataService';
+import {ThemeCard} from '../card/card';
+import {ThemesDataService} from '../../services/QuestionDataService';
 
 @Component({
   selector: 'home',
-  bindings: [QuestionDataService]
+  bindings: [ThemesDataService]
 })
 @View({
   templateUrl: './components/home/home.html',
-  directives: [NgFor, Card],
-  encapsulation: ViewEncapsulation.None
+  directives: [NgFor, ThemeCard]
 })
 export class Home {
-  cards: any[];
+  private themeCards: any[];
   
-  constructor(QuestionService: QuestionDataService){
-    this.cards = QuestionService.list();
+  constructor(themeService: ThemesDataService){
+    this.themeCards = themeService.list();
   }
 }

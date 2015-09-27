@@ -47,6 +47,7 @@ var paths = {
     folder: root(DEST_FOLDER),
     vendor: root(DEST_FOLDER + '/vendor'),
     fonts: root(DEST_FOLDER + '/fonts'),
+    images: root(DEST_FOLDER + '/images'),
     test: root('test')
   },
   
@@ -61,6 +62,9 @@ var paths = {
     assets: rootDir([
       'app/**/*.html',
       'app/**/*.css'
+    ]),
+    images: rootDir([
+      'images/**/*'
     ]),
     fonts: rootDir([
       'fonts/**/*'
@@ -149,6 +153,11 @@ gulp.task('build:fonts', function () {
     .pipe(gulp.dest(paths.dest.fonts));
 });
 
+gulp.task('build:images', function () {
+  return gulp.src(paths.src.images)
+    .pipe(gulp.dest(paths.dest.images));
+});
+
 gulp.task('build:typescript', function () {
   var result = gulp.src(paths.src.ts)
     .pipe($.plumber())
@@ -174,7 +183,7 @@ gulp.task('build:index', function () {
 });
 
 gulp.task('build:app', function (done) {
-  runSequence('clean:dev', 'build:fonts', 'build:assets', 'build:typescript', 'build:index', done);
+  runSequence('clean:dev', 'build:fonts', 'build:images', 'build:assets', 'build:typescript', 'build:index', done);
 });
 
 gulp.task('build', function (done) {

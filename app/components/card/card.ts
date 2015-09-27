@@ -1,6 +1,11 @@
 /// <reference path="../../typings/_custom.d.ts" />
 
-import {Component, View, NgFor, ViewEncapsulation} from 'angular2/angular2';
+import {
+	Component, 
+	View, 
+	NgFor, 
+	ViewEncapsulation
+} from 'angular2/angular2';
 
 @Component({
 	properties: ['content'],
@@ -9,11 +14,17 @@ import {Component, View, NgFor, ViewEncapsulation} from 'angular2/angular2';
 @View({
 	templateUrl: './components/card/card.html',
 	directives: [NgFor],
-	styleUrls: ['./components/card/card.css'],
 	encapsulation: ViewEncapsulation.None
 })
-export class Card {
-	content: any;
-	
-	constructor(){}
-}
+export class QuestionCard {}
+
+@Component({
+	properties: ['theme'],
+	selector: 'theme-card'
+})
+@View({
+	templateUrl: './components/card/theme-card.html',
+	styleUrls: ['./components/card/card.css'],
+	directives: [NgFor]
+})
+export class ThemeCard {}
