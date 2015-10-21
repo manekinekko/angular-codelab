@@ -2,52 +2,26 @@
 
 import {
   Component, 
-  View, 
-  bootstrap, 
-  ViewEncapsulation, 
-  Directive,
-  Host,
-  SkipSelf,
-  ElementRef,
+  View
 } from 'angular2/angular2';
-
-import {DOM} from 'angular2/src/core/dom/dom_adapter';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig} from 'angular2/router';
 
 import {Home} from '../home/home';
-
-
-@Directive({
-  selector: '[fix-scrolling]',
-  host: {
-    '(window:resize)': 'onResize($event)'
-  }
-})
-class FixScrolling {
-  
-  private body: HTMLBodyElement;
-  
-  constructor(private elementRef: ElementRef) {
-    this.body = DOM.query('body');
-    this.setHeight();
-  }
-  
-  onResize(event: Event) {
-    this.setHeight();
-  }
-  
-  private setHeight() {
-    let height = this.body.getBoundingClientRect().height;
-    DOM.setStyle(this.elementRef.nativeElement, 'height', `${ height }px`);
-  }
-}
+import {APP_ROUTES, Routes} from '../../routes.config';
+import {FixScrolling} from './fix-scrolling';
 
 @Component({
   selector: 'toolbar'
 })
 @View({
   templateUrl: 'components/toolbar/toolbar.html',
-  directives: [ Home, FixScrolling ]
+  directives: [ ROUTER_DIRECTIVES, Home, FixScrolling ]
 })
+@RouteConfig(APP_ROUTES)
 export class Toolbar {
   title: string = 'Toolbar';
+  constructor(){
+    
+  }
 }
