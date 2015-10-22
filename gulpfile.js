@@ -266,7 +266,6 @@ gulp.task('serve', ['build'], function () {
     logLevel: 'info',
     logPrefix: 'DevFest-2015',
     notify: true,
-    reloadDelay: 100,
     server: {
       baseDir: DEST_FOLDER,
       middleware: superstatic({ debug: false})

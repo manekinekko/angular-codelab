@@ -18,12 +18,12 @@ export class Home {
   private themeCards: any[];
   private router: Router;
   
-  constructor(themeService: ThemesDataService, router: Router){
+  constructor(themeService: ThemesDataService){
     this.themeCards = themeService.list();
-    this.router = router;
   }
   
+  
   start(technology: ITechnology) {
-    this.router.navigate(`/${Routes.technology.as}/${technology.slug}`);
+    
   }
 }
