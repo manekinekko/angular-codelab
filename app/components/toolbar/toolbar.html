@@ -4,15 +4,13 @@
       <span class="mdl-layout-title">{{ title }}</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
-        <a [router-link]="['/Technology']" class="mdl-navigation__link">Technology</a>
-        <router-outlet></router-outlet>
+        <a [router-link]="['/Home']" class="mdl-navigation__link">Home</a>
       </nav>
     </div>
   </header>
  
   <main class="mdl-layout__content" fix-scrolling>
     <router-outlet></router-outlet>
-    <home></home>
   </main>
  
 </div>

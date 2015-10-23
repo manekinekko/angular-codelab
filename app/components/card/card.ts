@@ -1,30 +1,24 @@
 /// <reference path="../../typings/_custom.d.ts" />
 
 import {
-	Component, 
-	View, 
-	NgFor, 
-	ViewEncapsulation
+	Component,  
+	NgFor
 } from 'angular2/angular2';
+import {RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
 @Component({
 	properties: ['content'],
-	selector: 'card'
-})
-@View({
+	selector: 'question-card',
 	templateUrl: './components/card/card.html',
-	directives: [NgFor],
-	encapsulation: ViewEncapsulation.None
+	directives: [NgFor]
 })
 export class QuestionCard {}
 
 @Component({
 	properties: ['theme'],
-	selector: 'theme-card'
-})
-@View({
+	selector: 'theme-card',
 	templateUrl: './components/card/theme-card.html',
 	styleUrls: ['./components/card/card.css'],
-	directives: [NgFor]
+	directives: [NgFor, ROUTER_DIRECTIVES]
 })
 export class ThemeCard {}
