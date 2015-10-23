@@ -15,8 +15,8 @@ export class ThemesDataService {
 			logo: 'images/typescript.png',
 			description: 'lorem lorem lorem lorem lorem lorem loremloremloremlorem'
 		}, {
-			slug: 'javascript',
-			title: 'JavaScript',
+			slug: 'ecma',
+			title: 'ECMAScript 6',
 			logo: 'images/js.jpg',
 			description: 'lorem lorem lorem lorem lorem lorem loremloremloremlorem'
 		}, {
