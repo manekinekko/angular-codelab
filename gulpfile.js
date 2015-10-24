@@ -205,7 +205,6 @@ gulp.task('serve', ['build'], function () {
   
   $.watch([].concat(paths.src.ts).concat(paths.src.assets), function() {
     gulp.start('build');
-    $.livereload.listen();
   }).on('change', browserSync.reload);
     
 });
