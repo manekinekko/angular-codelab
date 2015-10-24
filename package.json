@@ -19,7 +19,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "browser-sync": "^2.9.11",
-    "del": "^2.0.2",
+    "del": "^1.1.1",
     "gulp": "^3.9.0",
     "gulp-inject": "^3.0.0",
     "gulp-load-plugins": "^1.0.0",

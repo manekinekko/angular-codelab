@@ -172,7 +172,7 @@ gulp.task('build:app', function (done) {
 });
 
 gulp.task('build', function (done) {
-  runSequence('build:app', 'build:vendor', done);
+  runSequence('clean', 'build:app', 'build:vendor', done);
 });
 
 // Post install (NPM lifecycle)
