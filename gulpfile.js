@@ -44,6 +44,7 @@ var paths = {
     vendor: root(DEST_FOLDER + '/vendor'),
     fonts: root(DEST_FOLDER + '/fonts'),
     images: root(DEST_FOLDER + '/images'),
+    styles: root(DEST_FOLDER + '/styles'),
     test: root('test')
   },
   
@@ -55,9 +56,11 @@ var paths = {
       '!app/init.ts',
       '!app/**/*_spec.ts'
     ]),
-    assets: rootDir([
-      'src/app/**/*.html',
-      'src/app/**/*.css'
+    html: rootDir([
+      'src/app/**/*.html'
+    ]),
+    styles: rootDir([
+      'src/app/styles/**/*.css'
     ]),
     images: rootDir([
       'images/**/*'
@@ -82,7 +85,7 @@ var paths = {
       
       'node_modules/chance/dist/chance.js',
       
-      'src/app/app.css',
+      'src/app/styles/app.css',
       'src/app/system.config.js'
     ]
   },
@@ -154,9 +157,15 @@ gulp.task('build:typescript', function () {
     .pipe(gulp.dest(paths.dest.folder));
 });
 
-gulp.task('build:assets', function () {
-  return gulp.src(paths.src.assets)
+gulp.task('build:html', function () {
+  return gulp.src(paths.src.html)
     .pipe(gulp.dest(paths.dest.folder))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('build:styles', function () {
+  return gulp.src(paths.src.styles)
+    .pipe(gulp.dest(paths.dest.styles))
     .pipe(browserSync.stream());
 });
 
@@ -168,7 +177,7 @@ gulp.task('build:index', function () {
 });
 
 gulp.task('build:app', function (done) {
-  runSequence('build:fonts', 'build:images', 'build:assets', 'build:typescript', 'build:index', done);
+  runSequence('build:fonts', 'build:images', 'build:html', 'build:styles', 'build:typescript', 'build:index', done);
 });
 
 gulp.task('build', function (done) {
@@ -190,6 +199,7 @@ gulp.task('postinstall', function (done) {
 // Serve dev.
 
 gulp.task('serve', ['build'], function () {
+  
   browserSync.init({
     port: serverport,
     files: paths.dest.folder,
@@ -203,7 +213,7 @@ gulp.task('serve', ['build'], function () {
     }
   });
   
-  $.watch([].concat(paths.src.ts).concat(paths.src.assets), function() {
+  $.watch([].concat(paths.src.ts, paths.src.html, paths.src.styles), function() {
     gulp.start('build');
   }).on('change', browserSync.reload);
     
