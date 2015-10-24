@@ -2,7 +2,7 @@
 
 import { Component, NgFor } from 'angular2/angular2';
 
-import { ThemeCard } from '../card/theme-card';
+import { ThemeCard } from './theme-card/theme-card';
 import { TechnologiesStore, ITechnology } from '../../services/TechnologiesStore';
 
 @Component({
@@ -16,7 +16,9 @@ export class Home {
   private themeCards: any[];
   
   constructor(technologiesStore: TechnologiesStore){
-    this.themeCards = technologiesStore.fetch();
+    technologiesStore.fetch().then((themes) => {
+      this.themeCards = themes;
+    });
   }
   
 }
