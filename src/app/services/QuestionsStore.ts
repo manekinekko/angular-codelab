@@ -1,6 +1,6 @@
 /// <reference path="../typings/_custom.d.ts" />
 
-import { Injectable } from 'angular2/core';
+import { QUESTIONS } from '../data/questions';
 
 export interface IQuestion {
 	title: string;
@@ -10,26 +10,8 @@ export interface IQuestion {
 	}[];
 }
 
-@Injectable()
 export class QuestionsStore {
-	fetch(): IQuestion[] {
-		return Array.apply(null, {length: 5}).map((item, index) => {
-			return {
-				title: `Question #${index+1} : `,
-				choices: [{
-					label: 'response A',
-					correct: true
-				}, {
-					label: 'response B',
-					correct: false
-				}, {
-					label: 'response C',
-					correct: false
-				}, {
-					label: 'response D',
-					correct: false
-				}]
-			}
-		});
+	fetch(filer: string): Promise<IQuestion[]> {
+		return Promise.resolve(QUESTIONS);
 	}
 }
