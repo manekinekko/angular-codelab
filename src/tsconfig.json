@@ -9,12 +9,7 @@
         "noLib": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "sourceMap": true,
-        "resolve": true
+        "sourceMap": true
     },
-    "files": [
-        "./app/typings/_custom.d.ts",
-        "./app/typings/ng2_test.d.ts"
-    ],
     "compileOnSave": false
 }

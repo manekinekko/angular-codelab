@@ -1,4 +1,6 @@
-import { Chance } from 'chance';
+/// <reference path="../typings/_custom.d.ts" />
+
+import { Injectable } from 'angular2/core';
 
 export interface ITechnology {
 	slug: string;
@@ -7,8 +9,9 @@ export interface ITechnology {
 	description: string;
 }
 
-export class ThemesDataService {
-	list(): ITechnology[] {
+@Injectable()
+export class TechnologiesStore {
+	fetch(): ITechnology[] {
 		return [{
 			slug: 'typescript',
 			title: 'TypeScript',
