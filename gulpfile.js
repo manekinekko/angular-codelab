@@ -5,10 +5,7 @@ var del = require('del');
 var fs = require('fs');
 var path = require('path');
 var join = path.join;
-var karma = require('karma').server;
 var runSequence = require('run-sequence');
-var semver = require('semver');
-var series = require('stream-series');
 var browserSync = require('browser-sync');
 var superstatic = require('superstatic');
 
@@ -39,8 +36,7 @@ var serverport = 3000;
 var paths = {
   
   config: {
-    karma: root('karma.conf.js'),
-    tsconfig: root('tsconfig.json')
+    tsconfig: root('src/tsconfig.json')
   },
   
   dest: {
@@ -52,16 +48,16 @@ var paths = {
   },
   
   src: {
-    everything: root('app/**'),
-    index: root('app/index.html'),
+    everything: root('src/app/**'),
+    index: root('src/app/index.html'),
     ts: rootDir([
-      'app/**/*.ts', 
+      'src/app/**/*.ts', 
       '!app/init.ts',
       '!app/**/*_spec.ts'
     ]),
     assets: rootDir([
-      'app/**/*.html',
-      'app/**/*.css'
+      'src/app/**/*.html',
+      'src/app/**/*.css'
     ]),
     images: rootDir([
       'images/**/*'
@@ -86,14 +82,10 @@ var paths = {
       
       'node_modules/chance/dist/chance.js',
       
-      'app/app.css',
-      'app/system.config.js'
+      'src/app/app.css',
+      'src/app/system.config.js'
     ]
   },
-  
-  specs: rootDir([
-    'app/**/*_spec.ts'
-  ]),
   
   clean: {
     dev: DEST_FOLDER,
@@ -103,17 +95,10 @@ var paths = {
     ]),
     typings: root('tsd_typings/'),
     everything: rootDir([
-      DEST_FOLDER,
-      'build/',
-      'tsd_typings/',
-      'node_modules/angular2/',
-      'angular/modules/angular2/typings/',
-      'angular/dist/'
+      DEST_FOLDER
     ])
   }
 };
-
-var HTMLMinifierOpts = { conditionals: true };
 
 var tsProject = $.typescript.createProject(paths.config.tsconfig, {
   typescript: require('typescript')
@@ -121,7 +106,7 @@ var tsProject = $.typescript.createProject(paths.config.tsconfig, {
 
 // Default task
 
-gulp.task('default', ['build']);
+gulp.task('default', ['serve']);
 
 // Clean
 
@@ -183,11 +168,11 @@ gulp.task('build:index', function () {
 });
 
 gulp.task('build:app', function (done) {
-  runSequence('clean:dev', 'build:fonts', 'build:images', 'build:assets', 'build:typescript', 'build:index', done);
+  runSequence('build:fonts', 'build:images', 'build:assets', 'build:typescript', 'build:index', done);
 });
 
 gulp.task('build', function (done) {
-  runSequence('clean:app', 'build:app', 'build:vendor', done);
+  runSequence('build:app', 'build:vendor', done);
 });
 
 // Post install (NPM lifecycle)
@@ -202,63 +187,10 @@ gulp.task('postinstall', function (done) {
   runSequence('install:typings', done);
 });
 
-// Test
-
-gulp.task('build:test', function() {
-  var result = gulp.src(paths.src.ts)
-    .pipe($.plumber())
-    .pipe($.inlineNg2Template({ base: 'app' }))
-    .pipe($.typescript(tsProject));
-
-  return result.js
-    .pipe(gulp.dest(paths.dest.test));
-});
-
-gulp.task('karma:start', ['build:test'], function(done) {
-
-  karma.start({
-    configFile: paths.config.karma,
-    singleRun: true
-  }, done);
-});
-
-gulp.task('test:dev', ['build:test'], function() {
-  $.watch(paths.src.everything, function() {
-    gulp.start('build:test');
-  });
-});
-
-gulp.task('test', ['karma:start'], function() {
-  $.watch(paths.src.everything, function() {
-    gulp.start('karma:start');
-  });
-});
-
-gulp.task('jasmine', ['build:app'], function() {
-
-  var terminalReporter = new $.jasmineReporters.TerminalReporter({
-    verbose: 3,
-    showStack: true,
-    color: true
-  });
-
-  var SpecReporter = require('jasmine-spec-reporter');
-  var specReporter = new SpecReporter();
-
-  return gulp.src(paths.specs).
-    pipe($.jasmine({
-      verbose: true,
-      includeStackTrace: true,
-      reporter: specReporter
-    }));
-
-});
-
-
 // Serve dev.
 
 gulp.task('serve', ['build'], function () {
-  browserSync({
+  browserSync.init({
     port: serverport,
     files: paths.dest.folder,
     injectChanges: true,
@@ -267,13 +199,13 @@ gulp.task('serve', ['build'], function () {
     logPrefix: 'DevFest-2015',
     notify: true,
     server: {
-      baseDir: DEST_FOLDER,
-      middleware: superstatic({ debug: false})
+      baseDir: DEST_FOLDER
     }
   });
   
   $.watch([].concat(paths.src.ts).concat(paths.src.assets), function() {
     gulp.start('build');
-  });
+    $.livereload.listen();
+  }).on('change', browserSync.reload);
     
 });
