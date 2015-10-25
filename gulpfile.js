@@ -79,11 +79,11 @@ var paths = {
       'node_modules/angular2/bundles/angular2.dev.js',
       'node_modules/angular2/bundles/router.dev.js',
       'node_modules/angular2/bundles/http.dev.js',
+
+      'node_modules/chance/dist/chance.min.js',
       
       'bower_components/material-design-lite/material.js',
-      'bower_components/material-design-lite/material.css',
-      
-      'node_modules/chance/dist/chance.js',
+      'bower_components/material-design-lite/material.css',      
       
       'src/app/styles/app.css',
       'src/app/system.config.js'
@@ -213,7 +213,7 @@ gulp.task('serve', ['build'], function () {
     }
   });
   
-  $.watch([].concat(paths.src.ts, paths.src.html, paths.src.styles), function() {
+  $.watch([].concat(paths.src.ts, paths.src.html, paths.src.styles, paths.src.vendor), function() {
     gulp.start('build');
   }).on('change', browserSync.reload);
     
