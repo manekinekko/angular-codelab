@@ -4,10 +4,18 @@ import { QUESTIONS } from '../data/questions';
 
 export interface IQuestion {
 	title: string;
+	description: string;
 	choices: {
 		label: string,
-		correct: boolean
+		correct: boolean,
+		checked?: boolean
 	}[];
+}
+
+export class Question implements IQuestion {
+	title = '';
+	description = '';
+	choices = [];
 }
 
 export class QuestionsStore {
