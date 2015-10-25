@@ -1,21 +1,22 @@
 <div class="mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">{{ question.title }}</h2>
+    <h2 class="mdl-card__title-text">{{ question?.title }}</h2>
   </div>
   <div class="mdl-card__supporting-text">
-    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-        for="demo-menu-lower-left">
-    <li class="mdl-menu__item" *ng-for="#choice of question.choices" >
-      {{ question.choices }}
-      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
-        <input type="checkbox" id="switch-1" class="mdl-switch__input" checked />
-        <span class="mdl-switch__label">{{ choice.label }}</span>
-      </label>
-    </li>
-  </ul>
+    <p>
+      {{ question?.description }}
+    </p>
+    <ul for="demo-menu-lower-left">
+      <li *ng-for="#choice of question?.choices" >
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+          <input type="checkbox" class="mdl-switch__input" [checked]="choice.checked" />
+          <span class="mdl-switch__label">{{ choice.label }}</span>
+        </label>
+      </li>
+    </ul>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <a (click)="next()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+    <a (click)="nextQuestion()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
       Next Question
     </a>
   </div>

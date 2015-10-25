@@ -1,7 +1,15 @@
+/// <reference path="../typings/_custom.d.ts" />
 
-export const QUESTIONS = Array.apply(null, {length: 5}).map((item, index) => {
+import { Chance } from 'chance';
+
+let gimme = (max: Number, definition: Function) => {
+	return Array.apply(null, {length: max}).map(definition);
+}
+
+export const QUESTIONS = gimme(5, (item, index) => {
 	return {
 		title: `Question #${index+1} : `,
+		description: chance.sentence(),
 		choices: [{
 			label: 'response A',
 			correct: true

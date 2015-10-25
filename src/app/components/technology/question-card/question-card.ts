@@ -2,7 +2,7 @@
 
 import { Component, NgFor, Input, Output, EventEmitter } from 'angular2/angular2';
 import { Technology } from '../technology';
-import { IQuestion } from '../../../services/QuestionsStore';
+import { IQuestion, Question } from '../../../services/QuestionsStore';
 
 @Component({
 	selector: 'question-card',
@@ -12,19 +12,21 @@ import { IQuestion } from '../../../services/QuestionsStore';
 export class QuestionCard {
 	
 	@Input() question: IQuestion;
-	@Output('onNextQuestion') onNext: EventEmitter; 
+	
+	// called on parent
+	@Output() onNextQuestion: EventEmitter; 
 	
 	constructor() {
-		console.log(this.question); // undefined
-		this.onNext = new EventEmitter();
+		this.question = new Question();
+		this.onNextQuestion = new EventEmitter();
 	}
 	
 	onInit() {
-		console.log(this.question); // valid
+		console.log('onInit', this.question); // valid
 	}
 	
-	next() {
-		this.onNext.next('done');
+	nextQuestion() {
+		//this.onNextQuestion.next(null);
 	}
 	
 }
