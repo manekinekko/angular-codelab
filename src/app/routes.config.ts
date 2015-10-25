@@ -11,7 +11,7 @@ export var Routes = {
 		as: 'Home'
 	},
 	technology: {
-		path: '/technology/:name',
+		path: '/technology/:name/:id',
 		component: Technology,
 		as: 'Technology'
 	}
