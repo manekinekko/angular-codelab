@@ -1,11 +1,15 @@
 System.config({
   map: {
-    bootstrap: './'
+    bootstrap: './',
+    chance: '/vendor/'
   },
   packages: {
     bootstrap: {
       main: './bootstrap.js',
       defaultExtension: 'js'
+    },
+    chance: {
+      main: './chance.min.js'
     }
   }
 });
