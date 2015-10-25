@@ -1,6 +1,7 @@
 /// <reference path="../../../typings/_custom.d.ts" />
 
-import { Component, NgFor, Input } from 'angular2/angular2';
+import { Component, NgFor, Input, Output, EventEmitter } from 'angular2/angular2';
+import { Technology } from '../technology';
 import { IQuestion } from '../../../services/QuestionsStore';
 
 @Component({
@@ -9,13 +10,21 @@ import { IQuestion } from '../../../services/QuestionsStore';
 	directives: [ NgFor ]
 })
 export class QuestionCard {
-	@Input() private question: IQuestion;
+	
+	@Input() question: IQuestion;
+	@Output('onNextQuestion') onNext: EventEmitter; 
 	
 	constructor() {
-		
+		console.log(this.question); // undefined
+		this.onNext = new EventEmitter();
+	}
+	
+	onInit() {
+		console.log(this.question); // valid
 	}
 	
 	next() {
-		
+		this.onNext.next('done');
 	}
+	
 }

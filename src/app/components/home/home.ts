@@ -21,4 +21,8 @@ export class Home {
     });
   }
   
+  updateTitle() {
+    console.log(arguments);
+  }
+  
 }

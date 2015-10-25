@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/_custom.d.ts" />
 
-import { Component, Input } from 'angular2/angular2';
+import { Component, Input, Output, EventEmitter } from 'angular2/angular2';
 import { RouterLink } from 'angular2/router';
 import { ITechnology } from '../../../services/TechnologiesStore';
 
@@ -11,5 +11,11 @@ import { ITechnology } from '../../../services/TechnologiesStore';
 	directives: [RouterLink]
 })
 export class ThemeCard {
-	@Input() private theme : ITechnology;
+	@Input() theme : ITechnology;
+	@Output() updateTitle: EventEmitter;
+	
+	constructor() {
+		this.theme = <ITechnology>{};
+		this.updateTitle = new EventEmitter();
+	}
 }
