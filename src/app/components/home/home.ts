@@ -1,6 +1,6 @@
 /// <reference path="../../typings/_custom.d.ts" />
 
-import { Component, NgFor } from 'angular2/angular2';
+import { Component, NgFor, ViewEncapsulation } from 'angular2/angular2';
 
 import { ThemeCard } from './theme-card/theme-card';
 import { TechnologiesStore, ITechnology } from '../../services/TechnologiesStore';
@@ -9,7 +9,8 @@ import { TechnologiesStore, ITechnology } from '../../services/TechnologiesStore
   selector: 'home',
   bindings: [TechnologiesStore],
   templateUrl: './components/home/home.html',
-  directives: [NgFor, ThemeCard]
+  directives: [NgFor, ThemeCard],
+  encapsulation: ViewEncapsulation.None
 })
 export class Home {
   

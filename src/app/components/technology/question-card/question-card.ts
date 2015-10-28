@@ -8,8 +8,8 @@ import { IQuestion, IChoice, Question } from '../../../services/QuestionsStore';
 @Component({
 	selector: 'question-card',
 	templateUrl: './components/technology/question-card/question-card.html',
-	encapsulation: ViewEncapsulation.None,
-	directives: [NgFor]
+	directives: [NgFor],
+	encapsulation: ViewEncapsulation.None
 })
 export class QuestionCard {
 	

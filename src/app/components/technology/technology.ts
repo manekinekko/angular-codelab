@@ -1,6 +1,6 @@
 /// <reference path="../../typings/_custom.d.ts" />
 
-import { Component, NgIf, Inject } from 'angular2/angular2';
+import { Component, NgIf, Inject, ViewEncapsulation } from 'angular2/angular2';
 import { Router, RouteParams, RouterLink, Location } from 'angular2/router';
 
 import { QuestionCard } from './question-card/question-card';
@@ -36,7 +36,8 @@ enum QUESTION {
       </a>
     </div>
   `,
-  directives: [QuestionCard, NgIf, RouterLink]
+  directives: [QuestionCard, NgIf, RouterLink],
+  encapsulation: ViewEncapsulation.None
 })
 export class Technology {
   
