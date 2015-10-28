@@ -8,19 +8,24 @@ let gimme = (max: Number, definition: Function) => {
 
 export const QUESTIONS = gimme(5, (item, index) => {
 	return {
+		id: chance.guid(),
 		title: `Question #${index+1} : `,
-		description: chance.sentence(),
+		description: chance.sentence(25),
 		choices: [{
-			label: 'response A',
+			id: chance.guid(),
+			label: chance.word(),
 			correct: true
 		}, {
-			label: 'response B',
+			id: chance.guid(),
+			label: chance.word(),
 			correct: false
 		}, {
-			label: 'response C',
+			id: chance.guid(),
+			label: chance.word(),
 			correct: false
 		}, {
-			label: 'response D',
+			id: chance.guid(),
+			label: chance.word(),
 			correct: false
 		}]
 	}
