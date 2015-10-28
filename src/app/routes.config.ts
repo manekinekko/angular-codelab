@@ -2,6 +2,7 @@
 
 import { RouteDefinition } from 'angular2/router';
 import { Home } from './components/home/home';
+import { Summary } from './components/summary/summary';
 import { Technology } from './components/technology/technology';
 
 export var Routes = {
@@ -14,6 +15,11 @@ export var Routes = {
 		path: '/technology/:name/:id',
 		component: Technology,
 		as: 'Technology'
+	},
+	summary: {
+		path: '/summary',
+		component: Summary,
+		as: 'Summary'
 	}
 };
 
