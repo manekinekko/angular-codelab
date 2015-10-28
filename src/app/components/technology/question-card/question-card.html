@@ -9,15 +9,13 @@
     <ul for="demo-menu-lower-left">
       <li *ng-for="#choice of question?.choices" >
         <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
-          <input type="checkbox" class="mdl-switch__input" [checked]="choice.checked" />
+          <input  type="checkbox" 
+                  class="mdl-switch__input" 
+                  [checked]="choice.checked"
+                  (change)="onChange($event, choice)"/>
           <span class="mdl-switch__label">{{ choice.label }}</span>
         </label>
       </li>
     </ul>
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a (click)="nextQuestion()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Next Question
-    </a>
   </div>
 </div>

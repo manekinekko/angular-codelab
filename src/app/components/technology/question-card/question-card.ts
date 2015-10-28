@@ -1,32 +1,31 @@
 /// <reference path="../../../typings/_custom.d.ts" />
 
-import { Component, NgFor, Input, Output, EventEmitter } from 'angular2/angular2';
+import { Component, Input, NgFor, ViewEncapsulation } from 'angular2/angular2';
+import { RouterLink } from 'angular2/router';
 import { Technology } from '../technology';
-import { IQuestion, Question } from '../../../services/QuestionsStore';
+import { IQuestion, IChoice, Question } from '../../../services/QuestionsStore';
 
 @Component({
 	selector: 'question-card',
 	templateUrl: './components/technology/question-card/question-card.html',
-	directives: [ NgFor ]
+	encapsulation: ViewEncapsulation.None,
+	directives: [NgFor]
 })
 export class QuestionCard {
 	
 	@Input() question: IQuestion;
 	
-	// called on parent
-	@Output() onNextQuestion: EventEmitter; 
-	
 	constructor() {
-		this.question = new Question();
-		this.onNextQuestion = new EventEmitter();
+		//this.question = new Question();
 	}
 	
 	onInit() {
-		console.log('onInit', this.question); // valid
+		console.log('onInit', this.question);
 	}
 	
-	nextQuestion() {
-		//this.onNextQuestion.next(null);
+	onChange($event, choice: IChoice) {
+		console.log('onChange', $event, choice);
+		this.question.toggle(choice);
 	}
 	
 }

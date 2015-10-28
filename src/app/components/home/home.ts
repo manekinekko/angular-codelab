@@ -22,7 +22,7 @@ export class Home {
   }
   
   updateTitle() {
-    console.log(arguments);
+    //console.log(arguments);
   }
   
 }
