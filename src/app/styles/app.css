@@ -46,6 +46,7 @@
 
 html {
   font-family: 'Roboto Slab', serif;
+  -webkit-user-select: none;
 }
 
 body { 
