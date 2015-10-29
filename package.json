@@ -34,7 +34,7 @@
     "typescript": "^1.6.2"
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.44",
+    "angular2": "2.0.0-alpha.45",
     "chance": "^0.7.7",
     "es6-module-loader": "^0.15.0",
     "reflect-metadata": "0.1.0",
