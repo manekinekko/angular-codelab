@@ -6,13 +6,14 @@
     <p>
       {{ question?.description }}
     </p>
-    <ul for="demo-menu-lower-left">
-      <li *ng-for="#choice of question?.choices" >
-        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+    <ul class="mdl-menu" for="demo-menu-lower-left">
+      <li *ng-for="#choice of question?.choices" 
+          class="mdl-menu__item">
+        <label>
           <input  type="checkbox" 
-                  class="mdl-switch__input" 
+                  class="mdl-switch__input"
                   [checked]="choice.checked"
-                  (change)="onChange($event, choice)"/>
+                  (change)="onCheckedChange($event, choice)"/>
           <span class="mdl-switch__label">{{ choice.label }}</span>
         </label>
       </li>

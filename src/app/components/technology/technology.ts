@@ -12,26 +12,28 @@ enum QUESTION {
 
 @Component({
   selector: 'technology',
+  styles: [
+    '.mdl-card__actions {width: 320px;margin: 0 auto;}',
+    '.mdl-align__left {float: left;}',
+    '.mdl-align__right {float: right;}'
+  ],
   template:`
-    <question-card      
-      [question]="currentQuestion"
-      class="mdl-cell mdl-cell--4-col"
-    ></question-card>
+    <question-card [question]="currentQuestion" class="mdl-cell mdl-cell--4-col" ></question-card>
     
     <div class="mdl-card__actions mdl-card--border">
       <a  *ng-if="! isFirstQuestion === true" 
           (click)="previousQuestionClick()" 
-          class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          class="mdl-button mdl-align__left mdl-button--colored mdl-js-button mdl-js-ripple-effect">
         Previous Question
       </a>
       <a  *ng-if="! isLastQuestion === true" 
           (click)="nextQuestionClick()" 
-          class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          class="mdl-button mdl-align__right mdl-button--colored mdl-js-button mdl-js-ripple-effect">
         Next Question
       </a>
       <a  *ng-if="isLastQuestion === true" 
           [router-link]="['/Summary']" 
-          class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          class="mdl-button mdl-align__right mdl-button--colored mdl-js-button mdl-js-ripple-effect">
         Finish
       </a>
     </div>
