@@ -1,4 +1,4 @@
-The Devfest 2015
+Nantes Devfest 2015
 =======
 
 Angular 2 Codelab: Let's develop an Angular 2 application for The DevFest 2015 Conference.
