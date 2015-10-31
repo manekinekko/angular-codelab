@@ -26,31 +26,47 @@ gulp
 .
 ├── LICENSE
 ├── README.md
-├── __build__
-├── app
-│   ├── app.css
-│   ├── app.html
-│   ├── app.ts
-│   ├── components
+├── __build__/
+│   ├── app.js
+│   ├── bootstrap.js
+│   ├── components/
+│   ├── data/
+│   ├── fonts/
+│   ├── images/
 │   ├── index.html
-│   ├── init.ts
-│   ├── services
-│   ├── system.config.js
-│   └── typings
+│   ├── routes.config.js
+│   ├── services/
+│   ├── styles/
+│   └── vendor/
+├── bower.json
+├── bower_components/
+├── documentation/
+├── fonts/
 ├── gulpfile.js
+├── images/
 ├── karma.conf.js
 ├── package.json
-├── test-main.js
-├── tsconfig.json
+├── src/
+│   ├── app/
+│   │   ├── app.ts
+│   │   ├── bootstrap.ts
+│   │   ├── components/
+│   │   ├── data/
+│   │   ├── index.html
+│   │   ├── routes.config.ts
+│   │   ├── services/
+│   │   ├── styles/
+│   │   ├── system.config.js
+│   │   └── typings/
+│   └── tsconfig.json
+├── test/
 ├── tsd.json
+├── tsd_typings/
+└── typings/
 ```
 
-# Running test
+# Running local dev server
 
 ```bash
 gulp serve
 ```
-
-# License
-
-Apache 2.0
