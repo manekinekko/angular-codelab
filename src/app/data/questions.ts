@@ -6,7 +6,9 @@ let gimme = (max: Number, definition: Function) => {
 	return Array.apply(null, {length: max}).map(definition);
 }
 
-export const QUESTIONS = gimme(5, (item, index) => {
+let bool = () => chance.bool({likelihood: 50});
+
+export const QUESTIONS = gimme(2, (item, index) => {
 	return {
 		id: chance.guid(),
 		title: `Question #${index+1} : `,
@@ -14,19 +16,19 @@ export const QUESTIONS = gimme(5, (item, index) => {
 		choices: [{
 			id: chance.guid(),
 			label: chance.word(),
-			correct: true
+			correct: bool()
 		}, {
 			id: chance.guid(),
 			label: chance.word(),
-			correct: false
+			correct: bool()
 		}, {
 			id: chance.guid(),
 			label: chance.word(),
-			correct: false
+			correct: bool()
 		}, {
 			id: chance.guid(),
 			label: chance.word(),
-			correct: false
+			correct: bool()
 		}]
 	}
 });
