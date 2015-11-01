@@ -92,12 +92,14 @@ export class Technology {
   public afterViewInit() {
     
     this.updatetitle.next('Technology');
-    
-    this.currentQuestionId = 0;
-    
-    // fetch data
+  
+    this.fetchData();
+      
+  }
+  
+  private fetchData() {
     this.questionsStore
-      .fetch(/*this.params.get('id')*/)
+      .fetch()
       .then( (questions: IQuestion[]) => {
         this.questions = questions;
         return questions;
@@ -110,31 +112,32 @@ export class Technology {
         this.currentQuestion = questions[ this.currentQuestionId ];
       })
       .then(() => this.updateUrl(this.currentQuestion));
-      
   }
   
   private nextQuestionClick() {
-    console.log('Technology.nextQuestion()');
     this.navigateToQuestion(QUESTION.NEXT);
   }
   
   private previousQuestionClick() {
-    console.log('Technology.previousQuestion()');
     this.navigateToQuestion(QUESTION.PREVIOUS);
   }
   
-  private navigateToQuestion(where: QUESTION) {
+  private navigateToQuestion(nextOrPrevious: QUESTION) {
     if(this.questions.length > 0){
-      
-      this.currentQuestionId = this.computeCurrentQuestionId(this.currentQuestionId, where);
-      
-      this.currentQuestion = this.questions[ this.currentQuestionId ];
-      
-      this.isFirstQuestion = (this.currentQuestionId === 0);
-      this.isLastQuestion = (this.currentQuestionId === this.questions.length-1);
-      
+      this.setCurrentQuestion(nextOrPrevious);
+      this.setFirstLast();
       this.updateUrl(this.currentQuestion);
     }
+  }
+  
+  private setFirstLast() {
+    this.isFirstQuestion = (this.currentQuestionId === 0);
+    this.isLastQuestion = (this.currentQuestionId === this.questions.length-1);
+  }
+  
+  private setCurrentQuestion(nextOrPrevious: QUESTION) {
+      this.currentQuestionId = this.computeCurrentQuestionId(this.currentQuestionId, nextOrPrevious);
+      this.currentQuestion = this.questions[ this.currentQuestionId ];
   }
   
   // update url (does not reload the page)
@@ -142,14 +145,14 @@ export class Technology {
     this.location.go(`/technology/${this.params.get('name')}/${question.id}`);
   }
   
-  private computeCurrentQuestionId(currentId: number, where: QUESTION) {
+  private computeCurrentQuestionId(currentId: number, nextOrPrevious: QUESTION) {
     let currentQuestionId = currentId;
-    if(where === QUESTION.NEXT) {
+    if(nextOrPrevious === QUESTION.NEXT) {
       if((currentQuestionId + 1) < this.questions.length) {
         currentQuestionId += 1;
       }
     }
-    else if (where === QUESTION.PREVIOUS) {
+    else if (nextOrPrevious === QUESTION.PREVIOUS) {
       if((currentQuestionId - 1) >= 0) {
         currentQuestionId -= 1;
       }
