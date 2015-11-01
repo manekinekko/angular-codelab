@@ -17,9 +17,9 @@ Please take a minute and give us your feedback about Angular 2: http://bit.ly/de
 # Docucmentation
 ### App tree
 
-![Components tree](https://raw.githubusercontent.com/manekinekko/devfest-2015-ng2-codelab/master/documentation/devfest-components-tree.png)
+![Components tree](https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-components-tree.png)
 
-![Home screen](https://raw.githubusercontent.com/manekinekko/devfest-2015-ng2-codelab/master/documentation/devfest-home.png) 
+![Home screen](https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-home.png) 
 
 ![Technology screen](https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-technology.png)
 
