@@ -1,23 +1,41 @@
 /// <reference path="../../typings/_custom.d.ts" />
 
-import { Component, NgFor } from 'angular2/angular2';
-import { QuestionsStore, IQuestion } from '../../services/QuestionsStore';
+import { Component, NgFor, ViewEncapsulation } from 'angular2/angular2';
+import { QuestionsStore, IQuestionsStore, IQuestion, IChoice } from '../../services/QuestionsStore';
 import { QuestionCard } from '../technology/question-card/question-card';
+import { FixScrolling } from '../toolbar/fix-scrolling';
 
 @Component({
 	selector: 'summary',
 	template: `
-		<question-card [question]="question" *ng-for="#question of questions"></question-card>
+		<div>
+			<div class="mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+				<div class="mdl-card__supporting-text">
+					<h4>Your score is {{ score }}/{{ total }}</h4>
+				</div>
+			</div>
+		</div>
+		<question-card [preview]="true" [question]="question" *ng-for="#question of questions"></question-card>
 	`,
-	directives: [NgFor, QuestionCard]
+	directives: [NgFor, QuestionCard],
+	encapsulation: ViewEncapsulation.None
 })
 export class Summary {
 	
 	private questions: IQuestion[];
+	private score: number;
+	private total: number;
+	private questionsStore: IQuestionsStore;
 	
 	constructor(questionsStore: QuestionsStore) {
-		questionsStore.fetch().then( (questions) => this.questions = questions );
+		this.questionsStore = questionsStore;
+		this.questionsStore
+			.fetch()
+			.then( (questions) => this.questions = questions );
 	}
 	
-	onInit() {}
+	onInit() {
+		this.total = this.questions.length;
+		this.score = this.questionsStore.computeResult();
+	}
 }
