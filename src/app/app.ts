@@ -4,6 +4,7 @@ import { Component, ViewEncapsulation } from 'angular2/angular2';
 import { RouteConfig, Router, Location } from 'angular2/router';
 
 import { Toolbar } from './components/toolbar/toolbar';
+import { TechnologiesStore } from './services/TechnologiesStore';
 import { QuestionsStore } from './services/QuestionsStore';
 import { APP_ROUTES } from './routes.config';
 
@@ -11,7 +12,7 @@ import { APP_ROUTES } from './routes.config';
   selector: 'devfest',
   template: '<toolbar></toolbar>' ,
   directives: [ Toolbar ],
-  providers: [ QuestionsStore ],
+  providers: [ TechnologiesStore, QuestionsStore ],
   encapsulation: ViewEncapsulation.None
 })
 @RouteConfig(APP_ROUTES)
