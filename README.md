@@ -32,6 +32,7 @@ git clone https://github.com/manekinekko/devfest-2015-ng2-codelab
 cd !$
 npm install -g gulp bower tsd
 npm install
+bower install
 gulp
 ```
 
