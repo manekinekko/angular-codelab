@@ -30,7 +30,7 @@ export class FixScrolling {
   }
   
   private setHeight() {
-    let height = this.body.getBoundingClientRect().height - 100;
+    let height = this.body.getBoundingClientRect().height - 50;
     DOM.setStyle(this.elementRef.nativeElement, 'height', `${ height }px`);
   }
 }

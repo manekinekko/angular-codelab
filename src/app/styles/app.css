@@ -72,7 +72,7 @@ ng-mdl-icon.yellow-star {
 }
 
 .mdl-card {
-  /*width: 100%;*/
+  margin: 20px auto;
 }
 
 .mdl-card .mdl-caption {
