@@ -57,7 +57,8 @@ var paths = {
       '!app/**/*_spec.ts'
     ]),
     html: rootDir([
-      'src/app/**/*.html'
+      'src/app/**/*.html',
+      '!src/app/index.html'
     ]),
     styles: rootDir([
       'src/app/styles/**/*.css'
@@ -164,7 +165,6 @@ gulp.task('build:typescript', function () {
 gulp.task('build:html', function () {
   return gulp.src(paths.src.html)
     .pipe(gulp.dest(paths.dest.folder))
-    .pipe(browserSync.stream());
 });
 
 gulp.task('build:styles', function () {
@@ -226,13 +226,11 @@ gulp.task('serve', ['build'], function () {
   });
   
   gulp.watch(paths.src.ts, ['build:typescript']);
-  gulp.watch(paths.src.html, ['build:html']);
+  //gulp.watch(paths.src.html, ['build:html']);
   gulp.watch(paths.src.styles, ['build:styles']);
   gulp.watch(paths.src.vendor, ['build:vendor']);
   gulp.watch(paths.src.index, ['build:index']);
   
-  /*gulp.watch([].concat(paths.src.ts, paths.src.html, paths.src.styles, paths.src.vendor), function() {
-    gulp.start('build');
-  }).on('change', browserSync.reload);*/
+  gulp.watch(paths.src.html).on('change', browserSync.reload);
     
 });
