@@ -34,14 +34,13 @@
   font-feature-settings: 'liga';
 }
 
-@media screen and (max-width: 1024px) {
-  .mdl-layout__header {
-    display: block;
-  }
+.mdl-layout__header {
+  display: block;
 }
 
 .mdl-cell {
   text-align: center;
+  margin: 0 auto;
 }
 
 html {
@@ -73,6 +72,7 @@ ng-mdl-icon.yellow-star {
 
 .mdl-card {
   margin: 20px auto;
+  width: 500px;
 }
 
 .mdl-card .mdl-caption {
