@@ -133,17 +133,20 @@ gulp.task('clean:dev', function(done) {
 
 gulp.task('build:vendor', function () {
   return gulp.src(paths.src.vendor)
-    .pipe(gulp.dest(paths.dest.vendor));
+    .pipe(gulp.dest(paths.dest.vendor))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('build:fonts', function () {
   return gulp.src(paths.src.fonts)
-    .pipe(gulp.dest(paths.dest.fonts));
+    .pipe(gulp.dest(paths.dest.fonts))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('build:images', function () {
   return gulp.src(paths.src.images)
-    .pipe(gulp.dest(paths.dest.images));
+    .pipe(gulp.dest(paths.dest.images))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('build:typescript', function () {
@@ -154,7 +157,8 @@ gulp.task('build:typescript', function () {
 
   return result.js
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(paths.dest.folder));
+    .pipe(gulp.dest(paths.dest.folder))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('build:html', function () {
@@ -172,8 +176,10 @@ gulp.task('build:styles', function () {
 gulp.task('build:index', function () {
   var target = gulp.src(paths.src.index);
   var sources = gulp.src(paths.src.vendor, { read: false, relative: true});
+  
   return target.pipe($.inject(sources, {transform: transformPath()}))
-    .pipe(gulp.dest(paths.dest.folder));
+    .pipe(gulp.dest(paths.dest.folder))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('build:app', function (done) {
@@ -202,6 +208,12 @@ gulp.task('serve', ['build'], function () {
   
   browserSync.init({
     port: serverport,
+    watchOptions: {
+      awaitWriteFinish: {
+        stabilityThreshold: 2000,
+        pollInterval: 100
+      }
+    },
     files: paths.dest.folder,
     injectChanges: true,
     logFileChanges: true,
@@ -213,8 +225,14 @@ gulp.task('serve', ['build'], function () {
     }
   });
   
-  $.watch([].concat(paths.src.ts, paths.src.html, paths.src.styles, paths.src.vendor), function() {
+  gulp.watch(paths.src.ts, ['build:typescript']);
+  gulp.watch(paths.src.html, ['build:html']);
+  gulp.watch(paths.src.styles, ['build:styles']);
+  gulp.watch(paths.src.vendor, ['build:vendor']);
+  gulp.watch(paths.src.index, ['build:index']);
+  
+  /*gulp.watch([].concat(paths.src.ts, paths.src.html, paths.src.styles, paths.src.vendor), function() {
     gulp.start('build');
-  }).on('change', browserSync.reload);
+  }).on('change', browserSync.reload);*/
     
 });
