@@ -8,10 +8,13 @@
     </p>
     <ul class="mdl-menu" for="demo-menu-lower-left">
       <li *ng-for="#choice of question?.choices; #i = index" 
-          class="mdl-menu__item">
-        
+          class="mdl-menu__item"
+          [class.wrong]="isWrongAnswer(choice)"
+          [class.correct]="isCorrectAnswer(choice)"
+      >
+      
         <label [attr.for]=" 'switch-' + i ">
-          
+
           <input  type="checkbox" 
                   [attr.id]=" 'switch-' + i "
                   class="mdl-switch__input"
@@ -21,13 +24,12 @@
                   
           <span 
                   class="mdl-switch__label"
-                  [class.correct]="isCorrectAnswer(choice)"
-                  [class.wrong]="isWrongAnswer(choice)"
                   >{{ choice.label }}</span>
           
         </label>
         
-        <span *ng-if="preview && choice.correct" class="answer" >&#10003;</span>
+        <span *ng-if="preview" class="answer" >{{ choice | mark }}</span>
+        
       </li>
     </ul>
   </div>

@@ -4,9 +4,11 @@ import { Component, Input, NgFor, NgIf, ViewEncapsulation } from 'angular2/angul
 import { RouterLink } from 'angular2/router';
 import { Technology } from '../technology';
 import { IQuestion, IChoice, Question } from '../../../services/QuestionsStore';
+import { Mark } from './markPipe';
 /* import { LifeCyclesHooks } from '../../../services/LifeCyclesHooks'; */
 
 @Component({
+	pipes: [Mark],
 	selector: 'question-card',
 	templateUrl: './components/technology/question-card/question-card.html',
 	styles: [`
@@ -15,7 +17,7 @@ import { IQuestion, IChoice, Question } from '../../../services/QuestionsStore';
 		
 		.mdl-menu {z-index: 0;}
 		.mdl-switch__label {display: inline-block; width: 100%; height: 40px;}
-		.answer {display: inline-block; width: 20px; height: 20px; position: relative; right: 33px; color: rgb(0, 128, 0); top: -1px;}
+		.answer {display: inline-block; width: 20px; height: 20px; position: relative; right: 33px; top: -1px;}
 		.correct {color: green;}
 		.wrong {color: red;}
 	`],
@@ -32,8 +34,10 @@ export class QuestionCard /* extends LifeCyclesHooks */ {
 	}
 	
 	isCorrectAnswer(choice: IChoice): boolean {
-		return this.preview 
-			&& (choice.correct === choice.checked);
+		if(this.preview) {
+			return (choice.checked === choice.correct);
+		} 
+		return false;
 	}
 	
 	isWrongAnswer(choice: IChoice): boolean {
