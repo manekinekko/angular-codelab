@@ -15,7 +15,7 @@ var $ = require('gulp-load-plugins')();
 // Functions
 
 function root(_path) {
-  return (_path.indexOf('!')>=0 ? '!':'') + path.join(__dirname, _path);
+  return (_path.startsWith('!') ? '!':'') + path.join(__dirname, _path.replace('!', ''));
 }
 
 function rootDir(dir) {
@@ -52,8 +52,7 @@ var paths = {
     everything: root('src/app/**'),
     index: root('src/app/index.html'),
     ts: rootDir([
-      'src/app/**/*.ts', 
-      '!app/init.ts',
+      'src/app/**/*.ts',
       '!app/**/*_spec.ts'
     ]),
     html: rootDir([
@@ -163,8 +162,10 @@ gulp.task('build:typescript', function () {
 });
 
 gulp.task('build:html', function () {
+  
   return gulp.src(paths.src.html)
     .pipe(gulp.dest(paths.dest.folder))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('build:styles', function () {
@@ -180,6 +181,10 @@ gulp.task('build:index', function () {
   return target.pipe($.inject(sources, {transform: transformPath()}))
     .pipe(gulp.dest(paths.dest.folder))
     .pipe(browserSync.stream());
+});
+
+gulp.task('build:html:index', function(done) {
+  runSequence('build:html', 'build:index', done);
 });
 
 gulp.task('build:app', function (done) {
@@ -218,7 +223,7 @@ gulp.task('serve', ['build'], function () {
     injectChanges: true,
     logFileChanges: true,
     logLevel: 'info',
-    logPrefix: 'DevFest-2015',
+    logPrefix: 'DevFest',
     notify: true,
     server: {
       baseDir: DEST_FOLDER
@@ -226,11 +231,9 @@ gulp.task('serve', ['build'], function () {
   });
   
   gulp.watch(paths.src.ts, ['build:typescript']);
-  //gulp.watch(paths.src.html, ['build:html']);
   gulp.watch(paths.src.styles, ['build:styles']);
   gulp.watch(paths.src.vendor, ['build:vendor']);
   gulp.watch(paths.src.index, ['build:index']);
-  
-  gulp.watch(paths.src.html).on('change', browserSync.reload);
+  gulp.watch(paths.src.html, ['build:html']);
     
 });
