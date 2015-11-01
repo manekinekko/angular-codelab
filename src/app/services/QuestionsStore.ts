@@ -2,6 +2,10 @@
 
 import { QUESTIONS } from '../data/questions';
 
+export enum QUESTION {
+  NEXT, PREVIOUS
+}
+
 export interface IChoice {
 	id: string;
 	label: string,
@@ -16,6 +20,11 @@ export interface IQuestion {
 	choices: IChoice[];
 	
 	toggle(choice: IChoice): void;
+}
+
+export interface IQuestionsStore {
+	fetch(filterId?: string): Promise<IQuestion[]>;
+	computeResult(): number;
 }
 
 export class Question implements IQuestion {
@@ -56,8 +65,6 @@ export class QuestionsStore {
 	fetch(filterId?: string): Promise<IQuestion[]> {
 		let data = this.questions;
 		
-		console.log(filterId)
-		
 		if(filterId) {
 			data = data.filter( (question: IQuestion) => question.id === filterId);
 		}
@@ -68,5 +75,13 @@ export class QuestionsStore {
 		else {
 			return <any>(Promise.reject([]));
 		}
+	}
+	
+	computeResult(): number {
+		return this.questions
+			.map( (question: IQuestion) => question.choices )
+			.map( (choices: IChoice[] ) => choices.filter( (choice: IChoice) => choice.checked === choice.correct ) )
+			.filter( (choices: IChoice[]) => choices.length > 0 )
+			.length;
 	}
 }
