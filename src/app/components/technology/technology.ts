@@ -1,24 +1,23 @@
 /// <reference path="../../typings/_custom.d.ts" />
 
-import { Component, NgIf, Inject, ViewEncapsulation } from 'angular2/angular2';
+import { Component, NgIf, Inject, Output, EventEmitter, ViewEncapsulation } from 'angular2/angular2';
 import { Router, RouteParams, RouterLink, Location } from 'angular2/router';
+import { ObservableWrapper } from 'angular2/src/core/facade/async';
 
 import { QuestionCard } from './question-card/question-card';
-import { IQuestion, Question, QuestionsStore } from '../../services/QuestionsStore';
-
-enum QUESTION {
-  NEXT, PREVIOUS
-};
+import { IQuestion, Question, QuestionsStore, QUESTION } from '../../services/QuestionsStore';
+import { TitleObservableWrapper } from '../../services/TitleObservableWrapper';
 
 @Component({
   selector: 'technology',
-  styles: [
-    '.mdl-card__actions {width: 320px;margin: 0 auto;}',
-    '.mdl-align__left {float: left;}',
-    '.mdl-align__right {float: right;}'
-  ],
+  events: ['updatetitle'],
+  styles: [`
+    .mdl-card__actions {width: 320px;margin: 0 auto;}
+    .mdl-align__left {float: left;}
+    .mdl-align__right {float: right}
+  `],
   template:`
-    <question-card [question]="currentQuestion" class="mdl-cell mdl-cell--4-col" ></question-card>
+    <question-card [preview]="false" [question]="currentQuestion" class="mdl-cell mdl-cell--4-col" ></question-card>
     
     <div class="mdl-card__actions mdl-card--border">
       <a  *ng-if="! isFirstQuestion === true" 
@@ -52,6 +51,7 @@ export class Technology {
   private location: Location;
   private isFirstQuestion: boolean;
   private isLastQuestion: boolean;
+  private updatetitle: EventEmitter;
   
   // DI in pure ES6
   /*/
@@ -85,9 +85,13 @@ export class Technology {
     this.isFirstQuestion = true;
     this.isLastQuestion = false;
     
+    this.updatetitle = new EventEmitter();
+    
   }
   
-  public onInit() {
+  public afterViewInit() {
+    
+    this.updatetitle.next('Technology');
     
     this.currentQuestionId = 0;
     
@@ -106,6 +110,7 @@ export class Technology {
         this.currentQuestion = questions[ this.currentQuestionId ];
       })
       .then(() => this.updateUrl(this.currentQuestion));
+      
   }
   
   private nextQuestionClick() {
