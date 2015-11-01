@@ -1,11 +1,12 @@
 /// <reference path="../../typings/_custom.d.ts" />
 
-import { Component, NgFor, ViewEncapsulation } from 'angular2/angular2';
+import { Component, NgFor, ViewEncapsulation, Provider } from 'angular2/angular2';
 import { QuestionsStore, IQuestionsStore, IQuestion, IChoice } from '../../services/QuestionsStore';
 import { QuestionCard } from '../technology/question-card/question-card';
 import { FixScrolling } from '../toolbar/fix-scrolling';
 
 @Component({
+	providers: [QuestionsStore],
 	selector: 'summary',
 	template: `
 		<div>
