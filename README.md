@@ -15,9 +15,11 @@ https://slides.com/wassimchegham/getting-started-with-angular-2/
 Please take a minute and give us your feedback about Angular 2: http://bit.ly/devfest-2015-ng2-codelab
 
 # Docucmentation
-### App tree
+### Application tree components
 
 ![Components tree](https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-components-tree-details.png)
+
+### The app we are going to build
 
 <img src="https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-home.png" width="250px"/>
 <img src="https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-technology.png" width="250px"/>
@@ -27,11 +29,11 @@ Please take a minute and give us your feedback about Angular 2: http://bit.ly/de
 
 ```bash
 git clone https://github.com/manekinekko/devfest-2015-ng2-codelab
-cd !$
+cd $_
 npm install -g gulp bower tsd
 npm install
 bower install
-gulp
+gulp serve # run a local dev server
 ```
 
 # Directory Structure
@@ -77,10 +79,4 @@ gulp
 ├── tsd.json
 ├── tsd_typings/
 └── typings/
-```
-
-# Running local dev server
-
-```bash
-gulp serve
 ```
