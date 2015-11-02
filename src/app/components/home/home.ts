@@ -7,6 +7,7 @@ import { TechnologiesStore, ITechnology } from '../../services/TechnologiesStore
 
 @Component({
   selector: 'home',
+  providers: [ TechnologiesStore ],
   templateUrl: './components/home/home.html',
   directives: [NgFor, ThemeCard],
   encapsulation: ViewEncapsulation.None
