@@ -17,7 +17,7 @@ import { TitleObservableWrapper } from '../../services/TitleObservableWrapper';
     .mdl-align__right {float: right}
   `],
   template:`
-    <question-card [preview]="false" [question]="currentQuestion" class="mdl-cell mdl-cell--4-col" ></question-card>
+    <question-card (checked)="toggle($event)" [preview]="false" [question]="currentQuestion" class="mdl-cell mdl-cell--4-col" ></question-card>
     
     <div class="mdl-card__actions mdl-card--border">
       <a  *ng-if="! isFirstQuestion === true" 
@@ -31,7 +31,7 @@ import { TitleObservableWrapper } from '../../services/TitleObservableWrapper';
         Next Question
       </a>
       <a  *ng-if="isLastQuestion === true" 
-          [router-link]="['/Summary']" 
+          (click)="save()" 
           class="mdl-button mdl-align__right mdl-button--colored mdl-js-button mdl-js-ripple-effect">
         Finish
       </a>
@@ -101,17 +101,17 @@ export class Technology {
     this.questionsStore
       .fetch()
       .then( (questions: IQuestion[]) => {
-        this.questions = questions;
-        return questions;
-      })
-      .then( (questions: IQuestion[]) => {
-        this.questions = this.questions.map( (question: IQuestion) => new Question(question)); 
-        return this.questions; 
+        this.questions = questions.map( (question: IQuestion) => new Question(question));
+        return this.questions;
       })
       .then( (questions: IQuestion[]) => {
         this.currentQuestion = questions[ this.currentQuestionId ];
       })
       .then(() => this.updateUrl(this.currentQuestion));
+  }
+  
+  private toggle(choice) {
+    this.questions[ this.currentQuestionId ].toggle(choice);
   }
   
   private nextQuestionClick() {
@@ -128,6 +128,11 @@ export class Technology {
       this.setFirstLast();
       this.updateUrl(this.currentQuestion);
     }
+  }
+  
+  private save() {
+    this.questionsStore.save(this.questions);
+    this.router.navigate(['/Summary']);
   }
   
   private setFirstLast() {
