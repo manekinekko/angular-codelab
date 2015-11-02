@@ -21,9 +21,9 @@ Please take a minute and give us your feedback about Angular 2: http://bit.ly/de
 
 ### The app we are going to build
 
-<img src="https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-home.png" width="250px"/>
-<img src="https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-technology.png" width="250px"/>
-<img src="https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-summary.png" width="250px"/>
+<img src="https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-home.png" width="235px"/>
+<img src="https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-technology.png" width="235px"/>
+<img src="https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-summary.png" width="235px"/>
 
 # How to start
 
