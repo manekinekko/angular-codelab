@@ -4,9 +4,16 @@ import { Component, NgFor, ViewEncapsulation, Provider } from 'angular2/angular2
 import { QuestionsStore, IQuestionsStore, IQuestion, IChoice } from '../../services/QuestionsStore';
 import { QuestionCard } from '../technology/question-card/question-card';
 import { FixScrolling } from '../toolbar/fix-scrolling';
+import { Store } from '../../services/Store';
 
 @Component({
-	providers: [QuestionsStore],
+	providers: [
+		new Provider(QuestionsStore, {
+			useFactory: () => {
+				return new QuestionsStore(Store.read());
+			}
+		})
+	],
 	selector: 'summary',
 	template: `
 		<div>
@@ -37,6 +44,6 @@ export class Summary {
 	
 	onInit() {
 		this.total = this.questions.length;
-		this.score = this.questionsStore.computeResult();
+		this.score = this.questionsStore.computeResult(this.questions);
 	}
 }
