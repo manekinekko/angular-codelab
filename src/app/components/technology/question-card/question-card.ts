@@ -4,11 +4,11 @@ import { Component, Input, Output, NgFor, NgIf, EventEmitter, ViewEncapsulation 
 import { RouterLink } from 'angular2/router';
 import { Technology } from '../technology';
 import { IQuestion, IChoice, Question } from '../../../services/QuestionsStore';
-import { Mark } from './markPipe';
+import { MarkPipe } from './markPipe';
 /* import { LifeCyclesHooks } from '../../../services/LifeCyclesHooks'; */
 
 @Component({
-	pipes: [Mark],
+	pipes: [MarkPipe],
 	selector: 'question-card',
 	templateUrl: './components/technology/question-card/question-card.html',
 	styles: [`
@@ -36,21 +36,6 @@ export class QuestionCard /* extends LifeCyclesHooks */ {
 	
 	onCheckedChange($event, choice: IChoice) {
 		this.checked.next(choice);
-	}
-	
-	isCorrectAnswer(choice: IChoice): boolean {
-		if(this.preview) {
-			return (choice.checked === choice.correct);
-		} 
-		return false;
-	}
-	
-	isWrongAnswer(choice: IChoice): boolean {
-		return this.preview
-			&& (
-				(choice.correct !== choice.checked) 
-				|| (choice.correct && !choice.checked)
-			);
 	}
 	
 }

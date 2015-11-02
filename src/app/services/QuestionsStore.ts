@@ -14,6 +14,7 @@ export interface IChoice {
 	correct: boolean;
 	checked?: boolean;
 	toggle(): void;
+	isCorrect(): boolean;
 }
 
 export interface IQuestion {
@@ -22,6 +23,7 @@ export interface IQuestion {
 	description: string;
 	choices: IChoice[];
 	toggle(choice: IChoice): void;
+	isCorrect(): boolean;
 }
 
 export interface IQuestionsStore {
@@ -45,6 +47,9 @@ class Choice implements IChoice {
 	toggle() {
 		this.checked = ! this.checked;
 	}
+	isCorrect() {
+		return (this.correct && this.checked) || (!this.correct && !this.checked);
+	}
 }
 
 export class Question implements IQuestion {
@@ -67,6 +72,9 @@ export class Question implements IQuestion {
 			this.choices[index].toggle();
 		}
 	}
+	isCorrect() {
+		return this.choices.filter( (choice: IChoice) => choice.isCorrect() ).length === this.choices.length;
+	}
 	
 	private find(choice: IChoice) {
 		return this.choices.findIndex( (_choice: IChoice) => _choice.id === choice.id);
@@ -79,8 +87,7 @@ export class QuestionsStore {
 	private questions: IQuestion[];
 
 	constructor(questions: IQuestion[] = QUESTIONS){
-		this.questions = questions.map( (question: IQuestion) => new Question(question));
-		console.log('>>>> QuestionsStore', this.questions);	
+		this.questions = questions.map( (question: IQuestion) => new Question(question));	
 	}
 	
 	public save(questions: IQuestion[]) {
@@ -104,9 +111,6 @@ export class QuestionsStore {
 
 	public computeResult(questions?): number {
 		return (this.questions || questions)
-			.map( (question: IQuestion) => question.choices )
-			.map( (choices: IChoice[] ) => choices.filter( (choice: IChoice) => choice.checked === choice.correct ) )
-			.filter( (choices: IChoice[]) => choices.length > 0 )
-			.length;
+			.filter( (question: IQuestion ) => question.isCorrect() ).length;
 	}
 }
