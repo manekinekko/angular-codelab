@@ -1,7 +1,8 @@
 /// <reference path="../typings/_custom.d.ts" />
 
-import { Provider } from 'angular2/angular2';
+import { Provider, Injectable } from 'angular2/angular2';
 import { QUESTIONS } from '../data/questions';
+import { Store } from './Store';
 
 export enum QUESTION {
   NEXT, PREVIOUS
@@ -25,7 +26,7 @@ export interface IQuestion {
 
 export interface IQuestionsStore {
 	fetch(filterId?: string): Promise<IQuestion[]>;
-	computeResult(): number;
+	computeResult(questions?): number;
 }
 
 class Choice implements IChoice {
@@ -72,16 +73,21 @@ export class Question implements IQuestion {
 	}
 }
 
+@Injectable()
 export class QuestionsStore {
 	
 	private questions: IQuestion[];
-	
-	constructor(){
-		this.questions = QUESTIONS.map( (question: IQuestion) => new Question(question));
+
+	constructor(questions: IQuestion[] = QUESTIONS){
+		this.questions = questions.map( (question: IQuestion) => new Question(question));
 		console.log('>>>> QuestionsStore', this.questions);	
 	}
 	
-	fetch(filterId?: string): Promise<IQuestion[]> {
+	public save(questions: IQuestion[]) {
+		Store.save(questions);
+	}
+	
+	public fetch(filterId?: string): Promise<IQuestion[]> {
 		let data = this.questions;
 		
 		if(filterId) {
@@ -95,9 +101,9 @@ export class QuestionsStore {
 			return <any>(Promise.reject([]));
 		}
 	}
-	
-	computeResult(): number {
-		return this.questions
+
+	public computeResult(questions?): number {
+		return (this.questions || questions)
 			.map( (question: IQuestion) => question.choices )
 			.map( (choices: IChoice[] ) => choices.filter( (choice: IChoice) => choice.checked === choice.correct ) )
 			.filter( (choices: IChoice[]) => choices.length > 0 )
