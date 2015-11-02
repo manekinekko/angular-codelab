@@ -151,6 +151,8 @@ gulp.task('build:images', function () {
 
 gulp.task('build:typescript', function () {
   var result = gulp.src(paths.src.ts)
+    .pipe($.tslint())
+    .pipe($.tslint.report('verbose'))
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.typescript(tsProject));

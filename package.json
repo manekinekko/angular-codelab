@@ -26,6 +26,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-shell": "^0.5.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^3.5.0",
     "gulp-typescript": "^2.9.2",
     "gulp-watch": "^4.3.5",
     "run-sequence": "^1.1.4",
