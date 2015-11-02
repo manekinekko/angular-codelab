@@ -9,8 +9,8 @@
     <ul class="mdl-menu" for="demo-menu-lower-left">
       <li *ng-for="#choice of question?.choices; #i = index" 
           class="mdl-menu__item"
-          [class.wrong]="isWrongAnswer(choice)"
-          [class.correct]="isCorrectAnswer(choice)"
+          [class.wrong]="preview && !choice.isCorrect()"
+          [class.correct]="preview && choice.isCorrect()"
       >
       
         <label [attr.for]=" 'switch-' + i ">
@@ -22,9 +22,7 @@
                   [disabled]="preview"
                   (change)="onCheckedChange($event, choice)"/>
                   
-          <span 
-                  class="mdl-switch__label"
-                  >{{ choice.label }}</span>
+          <span class="mdl-switch__label">{{ choice.label }} - {{ choice.correct }}</span>
           
         </label>
         
