@@ -5,6 +5,9 @@ Nantes Devfest 2015
 [![Dependency Status](https://david-dm.org/manekinekko/devfest-2015-ng2-codelab.svg)](https://david-dm.org/manekinekko/devfest-2015-ng2-codelab)
 [![devDependency Status](https://david-dm.org/manekinekko/devfest-2015-ng2-codelab.svg)](https://david-dm.org/manekinekko/devfest-2015-ng2-codelab#info=devDependencies)
 
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/angular2-ci.svg)](https://saucelabs.com/u/angular2-ci)
+
+
 Angular 2 Codelab: Let's develop a simple Angular 2 application and get familiar with the new concepts.
 
 - **Note:** Angular 2.0 is not production ready yet!
