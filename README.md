@@ -2,6 +2,8 @@ Nantes Devfest 2015
 =======
 
 [![Join the chat at https://gitter.im/manekinekko/devfest-2015-ng2-codelab](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/manekinekko/devfest-2015-ng2-codelab?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Dependency Status](https://david-dm.org/manekinekko/devfest-2015-ng2-codelab.svg)](https://david-dm.org/manekinekko/devfest-2015-ng2-codelab)
+[![devDependency Status](https://david-dm.org/manekinekko/devfest-2015-ng2-codelab.svg)](https://david-dm.org/manekinekko/devfest-2015-ng2-codelab#info=devDependencies)
 
 Angular 2 Codelab: Let's develop a simple Angular 2 application and get familiar with the new concepts.
 
