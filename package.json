@@ -36,12 +36,12 @@
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.45",
-    "chance": "^0.7.7",
-    "es6-module-loader": "^0.15.0",
-    "reflect-metadata": "0.1.0",
-    "rx": "^3.1.2",
-    "systemjs": "^0.19.0",
-    "typescript-simple": "^2.0.0",
-    "zone.js": "^0.4.1"
+    "chance": "0.8.0",
+    "es6-module-loader": "0.17.8",
+    "reflect-metadata": "0.1.2",
+    "rx": "4.0.6",
+    "systemjs": "0.19.5",
+    "typescript-simple": "^3.0.2",
+    "zone.js": "0.5.8"
   }
 }
