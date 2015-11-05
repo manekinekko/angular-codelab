@@ -22,7 +22,7 @@ https://slides.com/wassimchegham/getting-started-with-angular-2/
 
 Please take a minute and give us your feedback about Angular 2: http://bit.ly/devfest-2015-ng2-codelab
 
-# Docucmentation
+# Documentation
 ### Application tree components
 
 ![Components tree](https://github.com/manekinekko/devfest-2015-ng2-codelab/raw/master/documentation/devfest-components-tree-details.png)
