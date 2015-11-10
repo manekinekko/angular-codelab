@@ -114,19 +114,19 @@ gulp.task('default', ['serve']);
 // Clean
 
 gulp.task('clean', function (done) {
-  del(paths.clean.everything, done);
+  return del(paths.clean.everything, done);
 });
 
 gulp.task('clean:typings', function(done) {
-  del(paths.clean.typings, done);
+  return del(paths.clean.typings, done);
 });
 
 gulp.task('clean:app', function(done) {
-  del(paths.clean.app, done);
+  return del(paths.clean.app, done);
 });
 
 gulp.task('clean:dev', function(done) {
-  del(paths.clean.dev, done);
+  return del(paths.clean.dev, done);
 });
 
 // Build dev
