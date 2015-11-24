@@ -13,10 +13,8 @@ import { ITechnology } from '../../../services/TechnologiesStore';
 })
 export class ThemeCard {
 	@Input() theme : ITechnology;
-	@Output() updateTitle: EventEmitter;
 	
 	constructor() {
 		this.theme = <ITechnology>{};
-		this.updateTitle = new EventEmitter();
 	}
 }

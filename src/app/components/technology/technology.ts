@@ -2,15 +2,12 @@
 
 import { Component, NgIf, Inject, Output, EventEmitter, ViewEncapsulation } from 'angular2/angular2';
 import { Router, RouteParams, RouterLink, Location } from 'angular2/router';
-import { ObservableWrapper } from 'angular2/src/core/facade/async';
 
 import { QuestionCard } from './question-card/question-card';
 import { IQuestion, Question, QuestionsStore, QUESTION } from '../../services/QuestionsStore';
-import { TitleObservableWrapper } from '../../services/TitleObservableWrapper';
 
 @Component({
   selector: 'technology',
-  events: ['updatetitle'],
   styles: [`
     .mdl-card__actions {width: 320px;margin: 0 auto;}
     .mdl-align__left {float: left;}
@@ -51,7 +48,6 @@ export class Technology {
   private location: Location;
   private isFirstQuestion: boolean;
   private isLastQuestion: boolean;
-  private updatetitle: EventEmitter;
 
   // DI in pure ES6
   /*/
@@ -85,13 +81,9 @@ export class Technology {
     this.isFirstQuestion = true;
     this.isLastQuestion = false;
 
-    this.updatetitle = new EventEmitter();
-
   }
 
   public afterViewInit() {
-
-    this.updatetitle.next('Technology');
 
     this.fetchData();
 

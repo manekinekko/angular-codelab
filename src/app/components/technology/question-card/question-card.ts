@@ -28,7 +28,7 @@ export class QuestionCard /* extends LifeCyclesHooks */ {
 	
 	@Input() question: IQuestion;
 	@Input() preview: boolean;
-	@Output() checked: EventEmitter;
+	@Output() checked: EventEmitter<Boolean>;
 	
 	constructor() {
 		this.checked = new EventEmitter();
