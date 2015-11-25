@@ -18,10 +18,6 @@ Angular 2 Codelab: Let's develop a simple Angular 2 application and get familiar
 
 https://slides.com/wassimchegham/getting-started-with-angular-2/
 
-# Your Feedback
-
-Please take a minute and give us your feedback about Angular 2: http://bit.ly/devfest-2015-ng2-codelab
-
 # Documentation
 ### Application tree components
 
