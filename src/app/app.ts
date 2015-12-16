@@ -16,7 +16,7 @@ import { APP_ROUTES } from './routes.config';
 })
 @RouteConfig(APP_ROUTES)
 export class Devfest {
-  constructor(router: Router, location: Location) {
+  constructor(router: Router) {
     router.navigate(['/Home']);
   }
 }

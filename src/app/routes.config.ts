@@ -5,6 +5,7 @@ import { Home } from './components/home/home';
 import { Summary } from './components/summary/summary';
 import { Technology } from './components/technology/technology';
 
+
 export var Routes = {
 	home: {
 		path: '/home',
@@ -20,7 +21,13 @@ export var Routes = {
 		path: '/summary',
 		component: Summary,
 		as: 'Summary'
+	},
+	otherwise: {
+		path: '/',
+		redirectTo: '/home'
 	}
 };
+
+
 
 export const APP_ROUTES: RouteDefinition[] = Object.keys(Routes).map((route) => Routes[route]);
