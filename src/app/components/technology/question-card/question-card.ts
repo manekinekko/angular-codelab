@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/_custom.d.ts" />
 
-import { Component, Input, Output, NgFor, NgIf, EventEmitter, ViewEncapsulation } from 'angular2/angular2';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from 'angular2/angular2';
 import { RouterLink } from 'angular2/router';
 import { Technology } from '../technology';
 import { IQuestion, IChoice, Question } from '../../../services/QuestionsStore';
@@ -21,7 +21,6 @@ import { MarkPipe } from './markPipe';
 		.correct {color: green;}
 		.wrong {color: red;}
 	`],
-	directives: [NgFor, NgIf],
 	encapsulation: ViewEncapsulation.None
 })
 export class QuestionCard /* extends LifeCyclesHooks */ {

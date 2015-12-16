@@ -1,6 +1,6 @@
 /// <reference path="../../typings/_custom.d.ts" />
 
-import { Component, NgFor, ViewEncapsulation, Provider } from 'angular2/angular2';
+import { Component, ViewEncapsulation, Provider } from 'angular2/angular2';
 import { QuestionsStore, IQuestionsStore, IQuestion, IChoice } from '../../services/QuestionsStore';
 import { QuestionCard } from '../technology/question-card/question-card';
 import { FixScrolling } from '../toolbar/fix-scrolling';
@@ -25,7 +25,7 @@ import { Store } from '../../services/Store';
 		</div>
 		<question-card [preview]="true" [question]="question" *ng-for="#question of questions"></question-card>
 	`,
-	directives: [NgFor, QuestionCard],
+	directives: [QuestionCard],
 	encapsulation: ViewEncapsulation.None
 })
 export class Summary {

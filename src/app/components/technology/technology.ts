@@ -1,6 +1,6 @@
 /// <reference path="../../typings/_custom.d.ts" />
 
-import { Component, NgIf, Inject, Output, EventEmitter, ViewEncapsulation } from 'angular2/angular2';
+import { Component, Inject, Output, EventEmitter, ViewEncapsulation } from 'angular2/angular2';
 import { Router, RouteParams, RouterLink, Location } from 'angular2/router';
 
 import { QuestionCard } from './question-card/question-card';
@@ -34,7 +34,7 @@ import { IQuestion, Question, QuestionsStore, QUESTION } from '../../services/Qu
       </a>
     </div>
   `,
-  directives: [QuestionCard, NgIf, RouterLink],
+  directives: [QuestionCard, RouterLink],
   encapsulation: ViewEncapsulation.None
 })
 export class Technology {
