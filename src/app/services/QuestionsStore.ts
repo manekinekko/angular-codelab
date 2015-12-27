@@ -1,6 +1,4 @@
-/// <reference path="../typings/_custom.d.ts" />
-
-import { Provider, Injectable } from 'angular2/angular2';
+import { Provider, Injectable } from 'angular2/core';
 import { QUESTIONS } from '../data/questions';
 import { Store } from './Store';
 

@@ -1,4 +1,6 @@
 # Logs
+tmp
+
 logs
 *.log
 .idea
@@ -24,6 +26,8 @@ pids
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
 
+bower_components
+
 # used for karma unit test coverage
 test/coverage
 
@@ -44,5 +48,5 @@ test/coverage
 /web_modules/
 
 # Typings
-/typings
+typings
 /tsd_typings

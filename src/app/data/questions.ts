@@ -1,4 +1,5 @@
-/// <reference path="../typings/_custom.d.ts" />
+/// <reference path="../../typings/chance/chance.d.ts" />
+
 
 import { Chance } from 'chance';
 

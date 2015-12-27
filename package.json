@@ -1,47 +1,23 @@
 {
-  "name": "devfest-2015-ng2-codelab",
-  "version": "1.0.0",
-  "description": "Angular 2 Codelab: develop an Angular 2 application for The DevFest 2015 Conference.",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:manekinekko/devfest-2015-ng2-codelab.git"
-  },
-  "bugs": {
-    "url": "https://github.com/manekinekko/devfest-2015-ng2-codelab/issues"
-  },
-  "homepage": "https://github.com/manekinekko/devfest-2015-ng2-codelab",
-  "scripts": {
-    "test": "gulp test",
-    "karma": "node_modules/.bin/karma start",
-    "postinstall": "gulp postinstall && gulp build"
-  },
-  "author": "Wassim Chegham <maneki.nekko@gmail.com>",
+  "name": "devoxx",
+  "version": "0.0.0",
   "license": "Apache-2.0",
-  "devDependencies": {
-    "browser-sync": "2.9.11",
-    "del": "2.0.2",
-    "gulp": "3.9.0",
-    "gulp-inject": "3.0.0",
-    "gulp-load-plugins": "1.0.0",
-    "gulp-plumber": "1.0.1",
-    "gulp-shell": "0.5.0",
-    "gulp-sourcemaps": "1.6.0",
-    "gulp-tslint": "3.5.0",
-    "gulp-typescript": "2.9.2",
-    "gulp-watch": "4.3.5",
-    "run-sequence": "1.1.4",
-    "superstatic": "3.0.0",
-    "systemjs-builder": "0.14.9",
-    "typescript": "1.6.2"
-  },
   "dependencies": {
-    "angular2": "2.0.0-alpha.46",
-    "chance": "0.8.0",
-    "es6-module-loader": "0.17.8",
+    "angular2": "2.0.0-beta.0",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
-    "rx": "4.0.6",
-    "systemjs": "0.19.5",
-    "typescript-simple": "^3.0.2",
-    "zone.js": "0.5.8"
+    "rxjs": "5.0.0-beta.0",
+    "systemjs": "0.19.4",
+    "zone.js": "0.5.10"
+  },
+  "devDependencies": {
+    "angular-cli": "0.0.*",
+    "angular-cli-github-pages": "^0.2.0",
+    "ember-cli-inject-live-reload": "^1.3.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-jasmine": "^0.3.6"
   }
 }

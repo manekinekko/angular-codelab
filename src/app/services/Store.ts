@@ -1,5 +1,3 @@
-/// <reference path="../typings/_custom.d.ts" />
-
 export class Store {
 	static save(questions) {
 		sessionStorage.setItem('store', JSON.stringify(questions));

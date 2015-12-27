@@ -1,5 +1,3 @@
-/// <reference path="../typings/_custom.d.ts" />
-
 import { THEMES } from '../data/themes';
 
 export interface ITechnology {

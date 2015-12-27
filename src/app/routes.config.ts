@@ -1,10 +1,7 @@
-/// <reference path="typings/_custom.d.ts" />
-
 import { RouteDefinition } from 'angular2/router';
-import { Home } from './components/home/home';
-import { Summary } from './components/summary/summary';
-import { Technology } from './components/technology/technology';
-
+import { Home } from './component/home/home';
+import { Summary } from './component/summary/summary';
+import { Technology } from './component/technology/technology';
 
 export var Routes = {
 	home: {
@@ -24,9 +21,10 @@ export var Routes = {
 	},
 	otherwise: {
 		path: '/',
-		redirectTo: '/home'
+		redirectTo: ['/Home']
 	}
 };
+
 
 
 
