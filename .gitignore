@@ -50,3 +50,5 @@ test/coverage
 # Typings
 typings
 /tsd_typings
+
+dist
