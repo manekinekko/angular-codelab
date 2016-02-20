@@ -1,0 +1,46 @@
+{
+  "name": "angular2-codelab",
+  "version": "1.0.0",
+  "license": "MIT",
+  "angular-cli": {
+    "notifications": {
+      "enabled": true,
+      "playSound": false
+    }
+  },
+  "scripts": {
+    "start": "ng server",
+    "postinstall": "typings install --ambient",
+    "lint": "tslint src/**/*.ts",
+    "format": "clang-format -i -style=file --glob=src/**/*.ts",
+    "pree2e": "webdriver-manager update",
+    "e2e": "protractor"
+  },
+  "private": true,
+  "dependencies": {
+    "angular2": "2.0.0-beta.6",
+    "clang-format": "^1.0.35",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "systemjs": "0.19.20"
+  },
+  "devDependencies": {
+    "angular-cli": "0.0.*",
+    "angular-cli-github-pages": "^0.2.0",
+    "ember-cli-inject-live-reload": "^1.3.0",
+    "glob": "^6.0.4",
+    "jasmine-core": "^2.3.4",
+    "jasmine-spec-reporter": "^2.4.0",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-jasmine": "^0.3.6",
+    "protractor": "^3.0.0",
+    "retyped-chance-tsd-ambient": "^0.7.3-0",
+    "ts-node": "^0.5.5",
+    "tslint": "^3.3.0",
+    "typescript": "^1.7.3",
+    "typings": "^0.6.6"
+  }
+}
