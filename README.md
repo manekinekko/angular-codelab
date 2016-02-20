@@ -46,41 +46,36 @@ gulp serve # run a local dev server
 .
 ├── LICENSE
 ├── README.md
-├── __build__/
-│   ├── app.js
-│   ├── bootstrap.js
-│   ├── components/
-│   ├── data/
-│   ├── fonts/
-│   ├── images/
-│   ├── index.html
-│   ├── routes.config.js
-│   ├── services/
-│   ├── styles/
-│   └── vendor/
-├── bower.json
-├── bower_components/
 ├── documentation/
-├── fonts/
-├── gulpfile.js
-├── images/
-├── karma.conf.js
-├── package.json
-├── src/
-│   ├── app/
-│   │   ├── app.ts
-│   │   ├── bootstrap.ts
-│   │   ├── components/
-│   │   ├── data/
+├── ng2-codelab/
+│   ├── ember-cli-buid.js
+│   ├── karma-test-shim.js
+│   ├── karma.conf.js
+│   ├── package.json
+│   ├── dist/
+│   │   ├── app.js
 │   │   ├── index.html
-│   │   ├── routes.config.ts
-│   │   ├── services/
+│   │   ├── app
+│   │   │   ├── ng2-codelab.js
+│   │   │   ├── routes.config.js
+│   │   │   ├── components/
+│   │   │   ├── data/
+│   │   │   ├── pipe/
+│   │   │   ├── services/
+│   │   ├── css
+│   │   ├── vendor
+│   ├── src/
+│   │   ├── app.ts
+│   │   ├── index.html
+│   │   ├── tsconfig.json
+│   │   ├── tsd.json
+│   │   ├── app/
+│   │   │   ├── ng2-codelab.ts
+│   │   │   ├── routes.config.ts
+│   │   │   ├── components/
+│   │   │   ├── data/
+│   │   │   ├── pipe/
+│   │   │   ├── services/
+│   │   ├── images/
 │   │   ├── styles/
-│   │   ├── system.config.js
-│   │   └── typings/
-│   └── tsconfig.json
-├── test/
-├── tsd.json
-├── tsd_typings/
-└── typings/
 ```
