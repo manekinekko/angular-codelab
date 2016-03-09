@@ -18,11 +18,6 @@ Angular 2 Codelab: Let's develop a simple Angular 2 application and get familiar
 
 https://slides.com/wassimchegham/getting-started-with-angular-2/
 
-# Documentation
-### Application tree components
-
-![Components tree](https://github.com/manekinekko/angular2-codelab/raw/master/documentation/devfest-components-tree-details.png)
-
 ### The app we are going to build
 
 <img src="https://github.com/manekinekko/angular2-codelab/raw/master/documentation/devfest-home.png" width="235px"/>
@@ -78,6 +73,15 @@ $ ng serve
 ├── typings/
 └── typings.json
 ```
+
+# Documentation
+### Application tree components
+
+![Components tree](https://github.com/manekinekko/angular2-codelab/raw/master/documentation/devfest-components-tree-details.png)
+
+### Application graph dependencies
+
+![Components tree](https://github.com/manekinekko/angular2-codelab/raw/master/documentation/devfest-components-deps-graph.png)
 
 # LICENSE
 The MIT License Copyright (c) 2016
