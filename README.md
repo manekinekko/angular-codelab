@@ -12,7 +12,7 @@ Angular2 Code lab
 Angular 2 Codelab: Let's develop a simple Angular 2 application and get familiar with the new concepts.
 
 - **Note:** Angular 2.0 is not production ready yet!
-- **Verison used in this app:** BETA-6
+- **Verison used in this app:** BETA-8
 
 # Slides
 
