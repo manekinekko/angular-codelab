@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, Provider, OnInit } from 'angular2/core';
 import { QuestionsStore, IQuestionsStore, IQuestion, IChoice } from '../../services/question-store/question-store';
 import { QuestionCard } from '../question-card/question-card';
-import { FixScrolling } from '../fix-scrolling/fix-scrolling';
+import { FixScrolling } from '../../directives/fix-scrolling/fix-scrolling';
 import { Store } from '../../services/store/store';
 
 @Component({
