@@ -1,6 +1,7 @@
 Angular2 Code lab
 =======
 
+[![GetBadges Game](https://manekinekko-angular2-codelab.getbadges.io/shield/company/manekinekko-angular2-codelab)](https://manekinekko-angular2-codelab.getbadges.io/?ref=shield-game)
 [![Join the chat at https://gitter.im/manekinekko/angular2-codelab](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/manekinekko/angular2-codelab?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Dependency Status](https://david-dm.org/manekinekko/angular2-codelab.svg)](https://david-dm.org/manekinekko/angular2-codelab)
 [![devDependency Status](https://david-dm.org/manekinekko/angular2-codelab.svg)](https://david-dm.org/manekinekko/angular2-codelab#info=devDependencies)
