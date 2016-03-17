@@ -39,12 +39,18 @@ $ npm install -g \
 
 # How to start
 
+The branch **step-1** is the first one for starting with an empty base.
+
 ```bash
-$ git clone https://github.com/manekinekko/angular2-codelab.git
+$ git clone -b step-1 https://github.com/manekinekko/angular2-codelab.git
 $ cd $_
 $ npm install
 $ ng serve
 ```
+
+# Solutions for each step
+
+Each step has a linked branch named step-**X**-**solution**
 
 # Directory Structure
 
