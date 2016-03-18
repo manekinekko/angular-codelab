@@ -54,16 +54,14 @@ Each step has a linked branch named step-**X**-**solution**
 
 # Steps
 
-## Step 1
-
-- add a root component
-- bootstrap your application
+[Details here](STEPS.md)
 
 # Directory Structure
 
 ```
 ├── LICENSE
 ├── README.md
+├── STEPS.md
 ├── config/
 ├── dist/
 ├── documentation/
