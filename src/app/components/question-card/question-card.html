@@ -22,11 +22,11 @@
                   [disabled]="preview"
                   (change)="onCheckedChange($event, choice)"/>
 
-          <span class="mdl-switch__label">{{ choice.label }}</span>
+          <span class="mdl-switch__label">{{ choice.label }} ({{ choice.correct }})</span>
 
         </label>
 
-        <span *ngIf="preview" class="answer" >{{ choice }}</span>
+        <span *ngIf="preview" class="answer" >{{ choice | mark }}</span>
 
       </li>
     </ul>

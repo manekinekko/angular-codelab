@@ -2,6 +2,7 @@ import {Component, ViewEncapsulation, Input, Output, EventEmitter, AfterViewInit
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {IQuestion, IChoice} from '../../services/question-store/question-store';
+import { MarkPipe } from '../../pipes/mark-pipe/mark-pipe';
 
 @Component({
   selector: 'question-card',
@@ -15,7 +16,8 @@ import {IQuestion, IChoice} from '../../services/question-store/question-store';
 	`],
   encapsulation: ViewEncapsulation.None,
   templateUrl: './app/components/question-card/question-card.html',
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES],
+  pipes: [MarkPipe]
 })
 export class QuestionCard implements AfterViewInit {
 

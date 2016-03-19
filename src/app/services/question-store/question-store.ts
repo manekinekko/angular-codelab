@@ -49,7 +49,7 @@ class Choice implements IChoice {
 		this.checked = ! this.checked;
 	}
 	isCorrect() {
-		return (this.correct && this.checked) || (!this.correct && !this.checked);
+		return this.correct === this.checked;
 	}
 }
 
