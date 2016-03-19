@@ -18,6 +18,4 @@ export class Home {
     technologiesStore.fetch().then((themes) => this.themeCards = themes);
   }
 
-  updateTitle() {}
-
 }
