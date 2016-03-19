@@ -2,11 +2,14 @@ import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Home} from './components/home/home';
+import {QuestionsStore} from './services/question-store/question-store';
 import {QuestionCard} from './components/question-card/question-card';
+import {Technology} from './components/technology/technology';
 
 @Component({
   selector: 'app',
   templateUrl: 'app/ng2codelab.html',
+  providers: [QuestionsStore],
   directives : [Home, ROUTER_DIRECTIVES]
 })
 @RouteConfig([
@@ -20,6 +23,11 @@ import {QuestionCard} from './components/question-card/question-card';
 		path: '/question',
 		component: QuestionCard,
 		name: 'QuestionCard'
+	},
+	{
+		path: '/technology',
+		component: Technology,
+		name: 'Technology'
 	}
 ])
 export class Ng2CodelabApp {
