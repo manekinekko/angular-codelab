@@ -7,7 +7,7 @@
   - use selector `<app></app>`
   - create and use the template `src/app/ng2codelab.html`
 3. bootstrap your application in `src/app.ts`
-4. **[optional]** check solution: https://github.com/manekinekko/angular2-codelab/tree/step-1-solution
+4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-1-solution
 
 ## Step 2: home and theme-card components
 
@@ -23,7 +23,7 @@
   - use selector `<home></home>`
   - use template `src/app/components/home/home.html`
   - use the provided service `src/app/services/technologies-store/technologies-store.ts`
-4. **[optional]** check solution: https://github.com/manekinekko/angular2-codelab/tree/step-2-solution
+4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-2-solution
 
 ## Step 3: setting up the router and question component
 
@@ -39,7 +39,7 @@
 5. update the `Ng2CodelabApp` template with the router directive
 6. include the necessary router proviers in `src/app.ts`
   - use `PathLocationStrategy`
-- **[optional]** check solution: https://github.com/manekinekko/angular2-codelab/tree/step-3-solution
+7. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-3-solution
 
 
 ## Step 4: technology component
@@ -53,9 +53,7 @@
   - `src/app/components/technology/technology.ts`
   - `src/app/services/question-store/question-store.ts`
   - `src/app/services/session-store/session-store.ts`
-- **[optional]** check solution: https://github.com/manekinekko/angular2-codelab/tree/step-4-solution
-
-@todo
+4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-4-solution
 
 ## Step 5: summary component
 
