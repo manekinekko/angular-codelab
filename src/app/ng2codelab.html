@@ -4,7 +4,7 @@
 
       <!-- Title -->
       <span class="mdl-layout-title">
-        <a href="#" class="mdl-navigation__link">{{ title }}</a>
+        <a [routerLink]="[ '/Home' ]" class="mdl-navigation__link">{{ title }}</a>
       </span>
 
       <!-- Add spacer, to align navigation to the right -->
@@ -16,7 +16,7 @@
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <a href="#" class="mdl-navigation__link">
+    <a [routerLink]="[ '/Home' ]" class="mdl-navigation__link">
       <span class="mdl-layout-title">{{ title }}</span>
     </a>
     <nav class="mdl-navigation">
@@ -25,7 +25,9 @@
   </div>
   <main class="mdl-layout__content">
     <div class="page-content">
-      <home></home>
+
+      <router-outlet></router-outlet>
+
     </div>
   </main>
 </div>
