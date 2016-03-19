@@ -17,4 +17,7 @@ export class Home {
   constructor(technologiesStore: TechnologiesStore){
     technologiesStore.fetch().then((themes) => this.themeCards = themes);
   }
+
+  updateTitle() {}
+
 }
