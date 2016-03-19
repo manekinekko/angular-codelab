@@ -58,6 +58,22 @@
 ## Step 5: summary component
 
 1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-5
-- **[optional]** check solution: https://github.com/manekinekko/angular2-codelab/tree/step-5-solution
+2. create and add a **smart** component
+  - name it `Summary`
+  - store it in `src/app/components/summary/summary.ts`
+  - use an inline template
+3. use a factory provider to get a new instance of the `QuestionsStore`
+4. read the stored session using `SessionStore.read()`
+5. use the `QuestionCard` component to display the saved answers
+6. update the router configuration in `src/app/ng2-codelab.ts`
+7. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-5-solution
 
-@todo
+## Step 6: add a Pipe
+
+1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-6
+2. add a pipe that shows a ✔ or ✘ if the given choice is correct or wrong, in the `Summary` component
+  - name the class `MarkPipe`  
+  - name the pipe `mark`
+  - store it in `src/app/pipes/mark-pipe/mark-pipe.ts`
+  - update the `QuestionCard` component and its template to use this pipe
+3. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-6-solution
