@@ -25,7 +25,7 @@
   - use the provided service `src/app/services/technologies-store/technologies-store.ts`
 4. **[optional]** check solution: https://github.com/manekinekko/angular2-codelab/tree/step-2-solution
 
-## Step 3: setting up the router
+## Step 3: setting up the router and question component
 
 1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-3
 2. create and add a **dump** component
@@ -42,14 +42,24 @@
 - **[optional]** check solution: https://github.com/manekinekko/angular2-codelab/tree/step-3-solution
 
 
-## Step 4: question component
+## Step 4: technology component
+
+> In this step, you are provided with all the necessary files containing the heavy work so you can focus on the basics. You can still take a momment and read this commit diff to understand what's really happening https://github.com/manekinekko/angular2-codelab/commit/39b9f0e6748825b51456d18dcd1cdd8d280fec7f
 
 1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-4
+2. update the `QuestionCard` component and its template so it can display and navigate the questions correctly
+  - use the elvis operator to allow parsing undefined values, ie: `{{question?.title}}`
+3. if you like challenges, you can re-implement these files:
+  - `src/app/components/technology/technology.ts`
+  - `src/app/services/question-store/question-store.ts`
+  - `src/app/services/session-store/session-store.ts`
 - **[optional]** check solution: https://github.com/manekinekko/angular2-codelab/tree/step-4-solution
+
 @todo
 
 ## Step 5: summary component
 
 1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-5
 - **[optional]** check solution: https://github.com/manekinekko/angular2-codelab/tree/step-5-solution
+
 @todo
