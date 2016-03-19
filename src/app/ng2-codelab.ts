@@ -5,6 +5,7 @@ import {Home} from './components/home/home';
 import {QuestionsStore} from './services/question-store/question-store';
 import {QuestionCard} from './components/question-card/question-card';
 import {Technology} from './components/technology/technology';
+import {Summary} from './components/summary/summary';
 
 @Component({
   selector: 'app',
@@ -28,6 +29,11 @@ import {Technology} from './components/technology/technology';
 		path: '/technology/:name/:id',
 		component: Technology,
 		name: 'Technology'
+	},
+	{
+		path: '/summary',
+		component: Summary,
+		name: 'Summary'
 	}
 ])
 export class Ng2CodelabApp {
