@@ -7,25 +7,19 @@ export var Routes = {
 	home: {
 		path: '/home',
 		component: Home,
-		as: 'Home'
+		name: 'Home',
+		useAsDefault: true
 	},
 	technology: {
 		path: '/technology/:name/:id',
 		component: Technology,
-		as: 'Technology'
+		name: 'Technology'
 	},
 	summary: {
 		path: '/summary',
 		component: Summary,
-		as: 'Summary'
-	},
-	otherwise: {
-		path: '/',
-		redirectTo: ['/Home']
+		name: 'Summary'
 	}
 };
-
-
-
 
 export const APP_ROUTES: RouteDefinition[] = Object.keys(Routes).map((route) => Routes[route]);
