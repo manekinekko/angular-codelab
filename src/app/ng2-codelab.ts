@@ -6,8 +6,4 @@ import {Component} from 'angular2/core';
 })
 export class Ng2CodelabApp {
   private title: string = 'Angular 2 Quiz App';
-
-  constructor() {
-
-  }
 }
