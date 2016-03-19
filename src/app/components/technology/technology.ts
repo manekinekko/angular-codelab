@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation, AfterViewInit } from 'angular2/core';
+import {Component, ViewEncapsulation, AfterViewInit} from 'angular2/core';
 import { Router, RouteParams, Location } from 'angular2/router';
 
 import { QuestionCard } from '../question-card/question-card';
@@ -106,7 +106,7 @@ export class Technology implements AfterViewInit {
       .then(() => {
 
         // update the current URL path according to the current question
-        this.updateUrl(this.currentQuestion)
+        this.updateUrl(this.currentQuestion);
       });
   }
 

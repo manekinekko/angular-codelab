@@ -25,7 +25,7 @@ import {Technology} from './components/technology/technology';
 		name: 'QuestionCard'
 	},
 	{
-		path: '/technology',
+		path: '/technology/:name/:id',
 		component: Technology,
 		name: 'Technology'
 	}
