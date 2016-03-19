@@ -18,7 +18,6 @@
   - use template `src/app/components/home/home.html`
   - use the provided service `src/app/services/technologies-store/technologies-store.ts`
 - **[optional]** check solution: https://github.com/manekinekko/angular2-codelab/tree/step-2-solution
-- 
 
 ## Step 3
 @todo
