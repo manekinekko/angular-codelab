@@ -1,5 +1,7 @@
-import {Component, ViewEncapsulation} from 'angular2/core';
+import {Component, ViewEncapsulation, Input, Output, EventEmitter, AfterViewInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
+
+import {IQuestion, IChoice} from '../../services/question-store/question-store';
 
 @Component({
   selector: 'question-card',
@@ -15,4 +17,21 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
   templateUrl: './app/components/question-card/question-card.html',
   directives: [ROUTER_DIRECTIVES]
 })
-export class QuestionCard {}
+export class QuestionCard implements AfterViewInit {
+
+  @Input() question: IQuestion;
+	@Input() preview: boolean;
+	@Output() checked: EventEmitter<IChoice>;
+
+	constructor() {
+		this.checked = new EventEmitter();
+	}
+
+	onCheckedChange($event, choice: IChoice) {
+		this.checked.emit(choice);
+	}
+
+  ngAfterViewInit() {
+    console.log(this.question);
+  }
+}
