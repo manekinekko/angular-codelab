@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ViewEncapsulation } from 'angular2/core';
+import { Component, Input, AfterViewInit, ViewEncapsulation } from 'angular2/core';
 import { ITechnology } from '../../services/technologies-store/technologies-store';
 
 @Component({
@@ -7,10 +7,15 @@ import { ITechnology } from '../../services/technologies-store/technologies-stor
   styleUrls: ['./styles/card.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class ThemeCard {
+export class ThemeCard implements AfterViewInit {
   @Input() theme : ITechnology;
 
   constructor() {
     this.theme = <ITechnology>{};
   }
+
+  ngAfterViewInit() {
+    console.log(this.theme);
+  }
+
 }
