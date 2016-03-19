@@ -15,9 +15,9 @@ export class Home {
   private themeCards: any[];
 
   constructor(technologiesStore: TechnologiesStore){
-    technologiesStore.fetch().then((themes) => {
-      this.themeCards = themes;
-    });
+    technologiesStore.fetch().then((themes) => this.themeCards = themes);
   }
+
+  updateTitle() {}
 
 }
