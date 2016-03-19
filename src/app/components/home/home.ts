@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from 'angular2/core';
 
 import { ThemeCard } from '../theme-card/theme-card';
-import { TechnologiesStore, ITechnology } from '../../services/technologies-store/technologies-store';
+import { TechnologiesStore } from '../../services/technologies-store/technologies-store';
 
 @Component({
   selector: 'home',
@@ -15,13 +15,6 @@ export class Home {
   private themeCards: any[];
 
   constructor(technologiesStore: TechnologiesStore){
-    technologiesStore.fetch().then((themes) => {
-      this.themeCards = themes;
-    });
+    technologiesStore.fetch().then((themes) => this.themeCards = themes);
   }
-
-  updateTitle() {
-    //console.log(arguments);
-  }
-
 }
