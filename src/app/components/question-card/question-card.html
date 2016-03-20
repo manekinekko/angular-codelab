@@ -9,6 +9,10 @@
     <ul class="mdl-menu" for="demo-menu-lower-left">
       <li *ngFor="#choice of question?.choices; #i = index"
           class="mdl-menu__item"
+
+          [statusPreview]="preview"
+          [status]="choice.isCorrect()"
+
       >
 
         <label [attr.for]=" 'switch-' + i ">

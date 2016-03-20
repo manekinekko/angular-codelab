@@ -23,7 +23,7 @@ import {SessionStore} from '../../services/session-store/session-store';
 	directives: [QuestionCard],
 	encapsulation: ViewEncapsulation.None
 })
-export class Summary implements OnInit{
+export class Summary implements OnInit {
 
 	private questions: IQuestion[];
 	private score: number;
