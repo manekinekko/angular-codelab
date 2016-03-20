@@ -71,9 +71,12 @@
 ## Step 6: add a Pipe
 
 1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-6
-2. add a pipe that shows a ✔ or ✘ if the given choice is correct or wrong, in the `Summary` component
+2. add an input property (boolean) to the `QuestionCard` to enable/disable a "preview mode"
+  - name it `preview`
+  - in preview mode, the checkboxes must be disabled
+  - in preview mode, the status of a choice is shown (see pipe below)
+3. add a pipe that shows a ✔ or ✘ if the given choice is correct or wrong, in the `QuestionCard` component
   - name the class `MarkPipe`  
   - name the pipe `mark`
   - store it in `src/app/pipes/mark-pipe/mark-pipe.ts`
-  - update the `QuestionCard` component and its template to use this pipe
-3. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-6-solution
+4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-6-solution
