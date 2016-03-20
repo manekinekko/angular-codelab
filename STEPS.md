@@ -80,3 +80,15 @@
   - name the pipe `mark`
   - store it in `src/app/pipes/mark-pipe/mark-pipe.ts`
 4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-6-solution
+
+## Step 7 (Bonus): add a directive
+
+1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-7
+2. update the content of the directive `StatusDirective` that sets the color of a choice
+  - use selector `[status]` 
+  - if the choice is correct, set the color to green, otherwise set it to red
+  - it should have a property `statusPreview` reflecting the preview mode status
+  - use the `Renderer` to set the style `this.renderer.setElementStyle()`
+  - the directive is stored in `src/app/directives/status-directive/status-directive.ts`
+4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-7-solution
+
