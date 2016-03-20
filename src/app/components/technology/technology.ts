@@ -12,7 +12,7 @@ import { IQuestion, IChoice, Question, QuestionsStore, QUESTION } from '../../se
     .mdl-align__right {float: right}
   `],
   template: `
-    <question-card (checked)="toggle($event)" [preview]="false" [question]="currentQuestion" class="mdl-cell mdl-cell--4-col" ></question-card>
+    <question-card (checked)="toggle($event)" [question]="currentQuestion" class="mdl-cell mdl-cell--4-col" ></question-card>
     <div class="mdl-card__actions mdl-card--border">
       <a  *ngIf="! isFirstQuestion === true"
           (click)="previousQuestionClick()"

@@ -20,7 +20,6 @@ import {IQuestion, IChoice} from '../../services/question-store/question-store';
 export class QuestionCard implements AfterViewInit {
 
   @Input() question: IQuestion;
-	@Input() preview: boolean;
 	@Output() checked: EventEmitter<IChoice>;
 
 	constructor() {
