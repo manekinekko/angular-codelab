@@ -8,6 +8,7 @@
   - create and use the template `src/app/ng2codelab.html`
 3. bootstrap your application in `src/app.ts`
 4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-1-solution
+5. diff: https://github.com/manekinekko/angular2-codelab/compare/step-1...step-1-solution
 
 ## Step 2: home and theme-card components
 
@@ -24,6 +25,7 @@
   - use template `src/app/components/home/home.html`
   - use the provided service `src/app/services/technologies-store/technologies-store.ts`
 4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-2-solution
+5. diff: https://github.com/manekinekko/angular2-codelab/compare/step-2...step-2-solution
 
 ## Step 3: setting up the router and question component
 
@@ -40,7 +42,7 @@
 6. include the necessary router proviers in `src/app.ts`
   - use `PathLocationStrategy`
 7. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-3-solution
-
+8. diff: https://github.com/manekinekko/angular2-codelab/compare/step-3...step-3-solution
 
 ## Step 4: technology component
 
@@ -54,6 +56,7 @@
   - `src/app/services/question-store/question-store.ts`
   - `src/app/services/session-store/session-store.ts`
 4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-4-solution
+5. diff: https://github.com/manekinekko/angular2-codelab/compare/step-4...step-4-solution
 
 ## Step 5: summary component
 
@@ -67,6 +70,7 @@
 5. use the `QuestionCard` component to display the saved answers
 6. update the router configuration in `src/app/ng2-codelab.ts`
 7. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-5-solution
+8. diff: https://github.com/manekinekko/angular2-codelab/compare/step-5...step-5-solution
 
 ## Step 6: add a Pipe
 
@@ -80,8 +84,9 @@
   - name the pipe `mark`
   - store it in `src/app/pipes/mark-pipe/mark-pipe.ts`
 4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-6-solution
+5. diff: https://github.com/manekinekko/angular2-codelab/compare/step-6...step-6-solution
 
-## Step 7 (Bonus): add a directive
+## Step 7: add a directive
 
 1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-7
 2. update the content of the directive `StatusDirective` that sets the color of a choice
@@ -91,4 +96,5 @@
   - use the `Renderer` to set the style `this.renderer.setElementStyle()`
   - the directive is stored in `src/app/directives/status-directive/status-directive.ts`
 4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-7-solution
+5. diff: https://github.com/manekinekko/angular2-codelab/compare/step-7...step-7-solution
 
