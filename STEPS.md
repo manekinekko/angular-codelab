@@ -5,8 +5,8 @@
   - name it `Ng2CodelabApp`
   - store it in `src/app/ng2-codelab.ts` 
   - use selector `<app></app>`
-  - create and use the template `src/app/ng2codelab.html`
-    - use template from [home.html#L17-L80](https://github.com/manekinekko/angular2-codelab/blob/step-1/src/home.html#L17-L80)
+  - create the template `src/app/ng2codelab.html`
+    - use template HTML from [home.html#L17-L80](https://github.com/manekinekko/angular2-codelab/blob/step-1/src/home.html#L17-L80)
 3. bootstrap your application in `src/app.ts`
 4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-1-solution
 5. diff: https://github.com/manekinekko/angular2-codelab/compare/step-1...step-1-solution
@@ -19,11 +19,13 @@
   - store it in `src/app/components/theme-card/theme-card.ts`
   - use selector `<theme-card></theme-card>`
   - use template `src/app/components/theme-card/theme-card.html`
+    - use template HTML from [home.html#L45-L59](https://github.com/manekinekko/angular2-codelab/blob/step-2-solution/src/home.html#L45-L59)
 3. create and add a **smart** component
   - name it `Home` 
   - store it in `src/app/components/home/home.ts`
   - use selector `<home></home>`
   - use template `src/app/components/home/home.html`
+    - Hint: use the **dump** `<theme-card></theme-card>`
   - use the provided service `src/app/services/technologies-store/technologies-store.ts`
 4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-2-solution
 5. diff: https://github.com/manekinekko/angular2-codelab/compare/step-2...step-2-solution
