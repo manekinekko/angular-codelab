@@ -40,7 +40,7 @@ $ npm install -g \
 
 ### How to start
 
-First you may need to [fork](https://github.com/manekinekko/angular2-codelab/edit/#fork-destination-box) the project on Github. If you need to improve this application we are building.
+First you may need to [fork](https://github.com/manekinekko/angular2-codelab#fork-destination-box) the project on Github. If you need to improve this application we are building.
 
 Then, clone the branch **step-1** to start with an empty architecture.
 
