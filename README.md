@@ -1,4 +1,4 @@
-Angular2 Code lab
+Angular2 Codelab
 =======
 
 [![GetBadges Game](https://manekinekko-angular2-codelab.getbadges.io/shield/company/manekinekko-angular2-codelab)](https://manekinekko-angular2-codelab.getbadges.io/?ref=shield-game)
