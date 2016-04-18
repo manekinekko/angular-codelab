@@ -42,8 +42,8 @@
   - add two routes: `Home` and `QuestionCard`
 4. update the `ThemeCard` and it template to use the router
 5. update the `Ng2CodelabApp` template with the router directive
-6. include the necessary router providers in `src/app.ts`
-  - use `PathLocationStrategy`
+6. check the necessary router providers included in `src/app.ts`
+  - we injected for you the router dependencies in [app.tsL5-L6](https://github.com/manekinekko/angular2-codelab/blob/step-3/src/app.ts#L5-L6)
 7. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-3-solution
 8. diff: https://github.com/manekinekko/angular2-codelab/compare/step-3...step-3-solution
 
