@@ -6,6 +6,7 @@
   - store it in `src/app/ng2-codelab.ts` 
   - use selector `<app></app>`
   - create and use the template `src/app/ng2codelab.html`
+    - use template from [home.html#L17-L80](https://github.com/manekinekko/angular2-codelab/blob/step-1/src/home.html#L17-L80)
 3. bootstrap your application in `src/app.ts`
 4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-1-solution
 5. diff: https://github.com/manekinekko/angular2-codelab/compare/step-1...step-1-solution
