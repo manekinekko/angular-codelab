@@ -40,12 +40,12 @@ $ npm install -g \
 
 ### How to start
 
-First you may need to fork the project on Github. If you need to improve this application we are building.
+First you may need to [fork](https://github.com/manekinekko/angular2-codelab/edit/#fork-destination-box) the project on Github. If you need to improve this application we are building.
 
 Then, clone the branch **step-1** to start with an empty architecture.
 
 ```bash
-$ git clone -b step-1 https://github.com/manekinekko/angular2-codelab.git
+$ git clone -b step-1 https://github.com/<your-github>/angular2-codelab.git
 $ cd $_
 $ npm install
 $ ng serve
