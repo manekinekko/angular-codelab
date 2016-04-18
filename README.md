@@ -55,7 +55,7 @@ $ ng serve
 
 ### Steps
 
-[Find all the steps here](STEPS.md). Each step has a soltion branch named step-**X**-**solution**
+[Find all the steps here](STEPS.md).
 
 # Directory Structure
 
