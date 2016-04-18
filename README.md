@@ -12,7 +12,6 @@ Angular2 Codelab
 
 Angular 2 Codelab: Let's develop a simple Angular 2 application and get familiar with the new concepts.
 
-- **Note:** Angular 2.0 is not production ready yet!
 - **Version used in this app:** BETA-11
 
 # Slides
@@ -27,6 +26,8 @@ https://slides.com/wassimchegham/getting-started-with-angular-2/
 
 # Before you start
 
+### Install all dependencies
+
 ```bash
 $ npm install -g angular-cli@0.0.23 typings@0.6.8
 $ # optional deps
@@ -37,9 +38,11 @@ $ npm install -g \
       protractor@3.1.1
 ```
 
-# How to start
+### How to start
 
-The branch **step-1** is the first one for starting with an empty base.
+First you may need to fork the project on Github. If you need to improve this application we are building.
+
+Then, clone the branch **step-1** to start with an empty architecture.
 
 ```bash
 $ git clone -b step-1 https://github.com/manekinekko/angular2-codelab.git
@@ -48,13 +51,11 @@ $ npm install
 $ ng serve
 ```
 
-# Solutions for each step
+# Follow the steps guide
 
-Each step has a linked branch named step-**X**-**solution**
+### Steps
 
-# Steps
-
-[Details here](STEPS.md)
+[Find all the steps here](STEPS.md). Each step has a soltion branch named step-**X**-**solution**
 
 # Directory Structure
 
