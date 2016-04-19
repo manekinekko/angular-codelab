@@ -68,6 +68,8 @@
   - name it `Summary`
   - store it in `src/app/components/summary/summary.ts`
   - use an inline template
+    - use template HTML from [summary.html#L50-L138](https://github.com/manekinekko/angular2-codelab/blob/step-5-solution/src/summary.html#L50-L138)
+    - Hint: reuse the `<question-card></question-card>` component
 3. use a factory provider to get a new instance of the `QuestionsStore`
 4. read the stored session using `SessionStore.read()`
 5. use the `QuestionCard` component to display the saved answers
