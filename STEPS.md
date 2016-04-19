@@ -20,10 +20,8 @@
   - use selector `<theme-card></theme-card>`
   - use template `src/app/components/theme-card/theme-card.html`
     - use template HTML from [home.html#L45-L59](https://github.com/manekinekko/angular2-codelab/blob/step-2-solution/src/home.html#L45-L59)
-3. create and add a **smart** component
-  - name it `Home` 
-  - store it in `src/app/components/home/home.ts`
-  - use selector `<home></home>`
+3. update the **smart** component `Home`
+  - you can find this component in `src/app/components/home/home.ts`
   - use template `src/app/components/home/home.html`
     - Hint: use the **dump** `<theme-card></theme-card>`
   - use the provided service `src/app/services/technologies-store/technologies-store.ts`
