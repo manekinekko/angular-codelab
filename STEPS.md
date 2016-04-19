@@ -71,11 +71,11 @@
     - use template HTML from [summary.html#L50-L138](https://github.com/manekinekko/angular2-codelab/blob/step-5-solution/src/summary.html#L50-L138)
     - Hint: reuse the `<question-card></question-card>` component
 3. use a factory provider to get a new instance of the `QuestionsStore`
-4. read the stored session using `SessionStore.read()`
-5. use the `QuestionCard` component to display the saved answers
-6. update the router configuration in `src/app/ng2-codelab.ts`
-7. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-5-solution
-8. diff: https://github.com/manekinekko/angular2-codelab/compare/step-5...step-5-solution
+  - read the stored session using `SessionStore.read()`
+4. use the `QuestionCard` component to display the saved answers
+5. update the router configuration in `src/app/ng2-codelab.ts`
+6. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-5-solution
+7. diff: https://github.com/manekinekko/angular2-codelab/compare/step-5...step-5-solution
 
 ## Step 6: add a Pipe
 
