@@ -37,7 +37,7 @@
   - use selector `<question-card></question-card>`
   - use template `src/app/components/question-card/question-card.html`
     - use template HTML from [quizz.html#L34-L71](https://github.com/manekinekko/angular2-codelab/blob/step-3-solution/src/quizz.html#L34-L71)
-3. add a route configurtion to the root component `Ng2CodelabApp`
+3. add a route configuration to the root component `Ng2CodelabApp`
   - add two routes: `Home` and `QuestionCard`
 4. update the `ThemeCard` and it template to use the router
 5. update the `Ng2CodelabApp` template with the router directive
