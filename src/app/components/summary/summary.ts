@@ -18,7 +18,7 @@ import {SessionStore} from '../../services/session-store/session-store';
 				</div>
 			</div>
 		</div>
-		<question-card [preview]="true" [question]="question" *ngFor="#question of questions"></question-card>
+		<question-card [question]="question" *ngFor="#question of questions"></question-card>
 	`,
 	directives: [QuestionCard],
 	encapsulation: ViewEncapsulation.None
