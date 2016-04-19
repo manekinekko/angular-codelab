@@ -52,7 +52,7 @@
 
 1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-4
 2. update the `QuestionCard` component and its template so it can display and navigate the questions correctly
-  - use @Input() and @Output() in order to receive a `question` (which will be the current question) property and send an `checked` event.  
+  - use `@Input()` and `@Output()` in order to receive a `question` (which will be the current question) property and send an `checked` event.  
   - use the elvis operator to allow parsing undefined values, ie: `{{question?.title}}`
 3. if you like challenges, you can re-implement these files:
   - `src/app/components/technology/technology.ts`
