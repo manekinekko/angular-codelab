@@ -2,7 +2,7 @@ import {Component, ViewEncapsulation, Input, Output, EventEmitter, AfterViewInit
 
 import {IQuestion, IChoice} from '../../services/question-store/question-store';
 import {MarkPipe} from '../../pipes/mark-pipe/mark-pipe';
-import {StatusDirective} from '../../directives/status/status';
+import {StatusDirective} from '../../directives/status-directive/status-directive';
 
 @Component({
   selector: 'question-card',
