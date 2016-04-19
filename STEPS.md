@@ -96,9 +96,10 @@
 1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-7
 2. update the content of the directive `StatusDirective` that sets the color of a choice
   - use selector `[status]` 
+  - use the existing `<span></span>` in [question-card.html#L27](https://github.com/manekinekko/angular2-codelab/blob/step-7/src/app/components/question-card/question-card.html#L27)
   - if the choice is correct, set the color to green, otherwise set it to red
-  - it should have a property `statusPreview` reflecting the preview mode status
-  - use the `Renderer` to set the style `this.renderer.setElementStyle()`
+    - use an `@Input()` property to get a choice status (`choice.isCorrect()`)
+  - use the `Renderer` to set the style `this.renderer.setElementStyle(nativeElement, styleProperty, value)`
   - the directive is stored in `src/app/directives/status-directive/status-directive.ts`
 4. check solution: https://github.com/manekinekko/angular2-codelab/tree/step-7-solution
 5. diff: https://github.com/manekinekko/angular2-codelab/compare/step-7...step-7-solution
