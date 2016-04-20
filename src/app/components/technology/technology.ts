@@ -7,7 +7,7 @@ import { IQuestion, Question, QuestionsStore, QUESTION } from '../../services/qu
 @Component({
   selector: 'technology',
   styles: [`
-    .mdl-card__actions {width: 320px;margin: 0 auto;}
+    .mdl-card__actions {width: 510px;margin: 0 auto;}
     .mdl-align__left {float: left;}
     .mdl-align__right {float: right}
   `],
