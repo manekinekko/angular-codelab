@@ -1,4 +1,4 @@
-Angular2 Code lab
+Angular2 Codelab
 =======
 
 [![GetBadges Game](https://manekinekko-angular2-codelab.getbadges.io/shield/company/manekinekko-angular2-codelab)](https://manekinekko-angular2-codelab.getbadges.io/?ref=shield-game)
@@ -12,8 +12,7 @@ Angular2 Code lab
 
 Angular 2 Codelab: Let's develop a simple Angular 2 application and get familiar with the new concepts.
 
-- **Note:** Angular 2.0 is not production ready yet!
-- **Verison used in this app:** BETA-8
+- **Version used in this app:** BETA-11
 
 # Slides
 
@@ -27,30 +26,31 @@ https://slides.com/wassimchegham/getting-started-with-angular-2/
 
 # Before you start
 
-```bash
-$ npm install -g angular-cli@0.0.23 typings@0.6.8
-$ # optional deps
-$ npm install -g \
-      tslint@3.4.0 \
-      clang-format@1.0.35 \
-      webdriver-manager@8.0.0 \
-      protractor@3.1.1
-```
+### How to start
 
-# How to start
+First you may need to [fork](https://github.com/manekinekko/angular2-codelab#fork-destination-box) the project on Github. If you need to improve this application we are building.
+
+Then, clone the branch **step-1** to start with an empty architecture.
 
 ```bash
-$ git clone https://github.com/manekinekko/angular2-codelab.git
+$ git clone -b step-1 https://github.com/<your-github>/angular2-codelab.git
 $ cd $_
 $ npm install
 $ ng serve
 ```
+
+# Follow the steps guide
+
+### Steps
+
+[Find all the steps here](STEPS.md).
 
 # Directory Structure
 
 ```
 ├── LICENSE
 ├── README.md
+├── STEPS.md
 ├── config/
 ├── dist/
 ├── documentation/
