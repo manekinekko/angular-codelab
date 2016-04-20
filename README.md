@@ -43,7 +43,7 @@ $ ng serve
 
 ### Steps
 
-[Find all the steps here](STEPS.md).
+[Find all the steps here](https://github.com/manekinekko/angular2-codelab/blob/master/STEPS.md).
 
 # Directory Structure
 
