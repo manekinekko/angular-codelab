@@ -39,8 +39,9 @@
     "zone.js": "0.6.4"
   },
   "devDependencies": {
-    "angular-cli": "0.0.*",
+    "angular-cli": "0.0.23",
     "angular-cli-github-pages": "^0.2.0",
+    "clang-format": "1.0.35",
     "ember-cli-inject-live-reload": "^1.3.0",
     "glob": "^6.0.4",
     "jasmine-core": "^2.3.4",
@@ -48,11 +49,12 @@
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.1",
     "karma-jasmine": "^0.3.6",
-    "protractor": "^3.0.0",
+    "protractor": "3.1.1",
     "retyped-chance-tsd-ambient": "^0.7.3-0",
     "ts-node": "^0.5.5",
-    "tslint": "^3.3.0",
+    "tslint": "3.4.0",
     "typescript": "^1.7.3",
-    "typings": "^0.6.6"
+    "typings": "0.6.8",
+    "webdriver-manager": "8.0.0"
   }
 }
