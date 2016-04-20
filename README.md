@@ -26,18 +26,6 @@ https://slides.com/wassimchegham/getting-started-with-angular-2/
 
 # Before you start
 
-### Install all dependencies
-
-```bash
-$ npm install -g angular-cli@0.0.23 typings@0.6.8
-$ # optional deps
-$ npm install -g \
-      tslint@3.4.0 \
-      clang-format@1.0.35 \
-      webdriver-manager@8.0.0 \
-      protractor@3.1.1
-```
-
 ### How to start
 
 First you may need to [fork](https://github.com/manekinekko/angular2-codelab#fork-destination-box) the project on Github. If you need to improve this application we are building.
