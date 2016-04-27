@@ -1,4 +1,4 @@
-## Step 1: setting up the environment
+## Step 1: bootstraping your first component
 
 1. clone branch: https://github.com/manekinekko/angular2-codelab/tree/step-1
 2. create and add a root component
